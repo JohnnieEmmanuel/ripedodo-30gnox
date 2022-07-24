@@ -1,0 +1,8 @@
+{
+  "name": "ripedodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "c93cb05b"
+}

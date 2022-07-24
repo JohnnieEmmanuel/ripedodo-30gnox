@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ripedodo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
