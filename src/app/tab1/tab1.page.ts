@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { MoviecrudService } from '../services/moviecrud.service';
+
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -7,6 +10,16 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  Movies: any = [];
+  
+  constructor(private movieCrudService: MoviecrudService) {}
+
+  ionViewDidEnter() {
+    this.movieCrudService.getMovies().subscribe((response) => {
+      this.Movies = response;
+      console.log(this.Movies);
+
+    })
+  }
 
 }

@@ -8,13 +8,22 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
+
+// Import HTTP module
+import { HttpClientModule } from '@angular/common/http';
+// Imort search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    Ng2SearchPipeModule,
+HttpClientModule 
+
   ],
   declarations: [Tab2Page]
 })

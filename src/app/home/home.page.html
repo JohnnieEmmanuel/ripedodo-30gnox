@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="container">
+    <ion-item>
+      <input type="file" (change)="onFileChange($event)" />
+    </ion-item>
+    <ion-button color="primary" expand="full" (click)="submitForm()">Upload</ion-button>
+    </div>
+</ion-content>
