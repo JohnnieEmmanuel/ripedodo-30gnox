@@ -11,7 +11,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.1.0",
@@ -34,6 +33,7 @@
     "ng2-file-upload": "^1.4.0",
     "ng2-search-filter": "^0.5.1",
     "ngx-build-plus": "^14.0.0",
+    "ngx-owl-carousel-o": "^14.0.1",
     "ngx-toastr": "^15.0.0",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",

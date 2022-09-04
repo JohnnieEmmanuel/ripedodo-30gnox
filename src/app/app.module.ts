@@ -16,14 +16,17 @@ import { ViewheaderComponent } from './viewheader/viewheader.component';
 // Imort search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [AppComponent, ViewheaderComponent],
 imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, ReactiveFormsModule, 
-  HttpClientModule,Ng2SearchPipeModule],
+  HttpClientModule,Ng2SearchPipeModule, CarouselModule,BrowserAnimationsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
+  
 })
+
 export class AppModule {}

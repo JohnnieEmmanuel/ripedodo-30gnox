@@ -9,24 +9,46 @@
 
 
 <ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-  
-  <ion-list>
-    <ion-item *ngFor="let movie of Movies ">
-      <ion-avatar slot="start">
-        <img [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'">
-      </ion-avatar>
-      <ion-label>{{movie.movietitle}}</ion-label>
-      <!-- <ion-label>{{movie._id}}</ion-label>
-     <ion-label>{{movie.movieurl}}</ion-label> -->
+ 
 
-    </ion-item>
+ 
+  <section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container py-lg-3">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Movies</h3>
+						</div>
+						<div class="headerhny-right text-lg-right">
+							<h4><a class="show-title" >Show all</a></h4>
+						</div>
+					</div>
+				</div>
+				<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 ">
+						<div class="col-7 box16 " *ngFor="let movie of Movies ">
+							<a >
+								<figure>
+									<img class="img-fluid" [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="">
+								</figure>
+								<div class="box-content" >
+									<h3 class="title">{{movie.movietitle}}</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> {{movie.movieruntime}}
 
-    
-  </ion-list>
-  
+										</span>
+
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					
+					
+					
+				</div>
+
+			</div>
+		</div>
+	</section>
+
 </ion-content>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HeadersComponent } from './headers/headers.component';
 import {ViewheaderComponent} from './viewheader/viewheader.component';
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   {
     path: 'viewheader', component: ViewheaderComponent 
   },
+  {
+    path: 'headers', component: HeadersComponent 
+  }
  
  
 ];
