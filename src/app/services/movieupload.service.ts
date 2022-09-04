@@ -23,7 +23,7 @@ export class Movie {
   providedIn: 'root'
 })
 export class MovieuploadService {
-
+//calling the api handling the upload for movie details
   endpoint = 'http://localhost:5000/v1/uploaddetails';
 
 
