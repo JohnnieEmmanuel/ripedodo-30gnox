@@ -11,23 +11,8 @@ import { Injectable } from '@angular/core';
 export class Tab1Page {
 
   Movies: any = [];
-  items:any =[
-    {
-        "id": "0",
-        "status":"marketplace",
-        "name": "Webstore",
-        "link": "https://youthscarf.com",
-        "iconlink": "http://atmoweb.id/wp-content/uploads/2019/10/ysweb.jpg"
-    },
-    {
-        "id": "6",
-        "status":"oa",
-        "name": "Instagram Signature",
-        "link": "https://instagram.com/youthcatalog_id/",
-        "iconlink": "http://atmoweb.id/wp-content/uploads/2019/10/listdummy.jpg"
-    }
-]
-  
+ Tvshows:any = [];
+MoviesOnly:any = [];
   constructor(private movieCrudService: MoviecrudService) {}
 
   ionViewDidEnter() {
@@ -35,29 +20,28 @@ export class Tab1Page {
       this.Movies = response;
       console.log(this.Movies);
 
-    getseries(this.Movies);
+    // filterSeriesOnly(this.Movies);
+    this.Tvshows  = this.Movies.filter(tvshow => tvshow.movietype === 'series') //filter series only
 
+    this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter series only
+console.log("ff", this.MoviesOnly)
     })
 
   
 
   }
-   getMarketplaceItems(items) {
-    return items.filter(item => item.status === 'marketplace');
-  }
+  
+  
+  
   
 
 }
-function getseries(moviearrs:any) {
-  console.log("manner from heaven")
-  console.log(moviearrs)
-  console.log(moviearrs.filter(moviearr => moviearr.movietype === 'series')) ;
 
-  return moviearrs.filter(moviearr => moviearr.movietype === 'series');
+// function filterSeriesOnly(Tvshows:any) {
+//   return Tvshows.filter(tvshow => tvshow.movietype === 'series');
+// }
 
-
-
-}
-
-
+// function filterMoviesOnly(Tvshows:any) {
+//   return Tvshows.filter(tvshow => tvshow.movietype === 'series');
+// }
 
