@@ -25,6 +25,14 @@ const routes: Routes = [
   },
   {
     path: 'headers', component: HeadersComponent 
+  },
+  {
+    path: 'movie/:id',
+    loadChildren: () => import('./movieinfo/movieinfo.module').then( m => m.MovieinfoPageModule)
+  },
+  {
+    path: 'movieinfo',
+    loadChildren: () => import('./movieinfo/movieinfo.module').then( m => m.MovieinfoPageModule)
   }
  
  

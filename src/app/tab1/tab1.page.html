@@ -16,7 +16,7 @@
 			<div class="container py-lg-3">
 				
 				<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 ">
-						<div class="col-7 box16 " *ngFor="let movie of MoviesOnly  ">
+						<div class="col-7 box16 " *ngFor="let movie of MoviesOnly" [routerLink]="['/', 'movie', movie._id]">
 							<a >
 								<figure>
 									<img class="img-fluid" [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="">

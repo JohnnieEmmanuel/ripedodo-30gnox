@@ -28,7 +28,7 @@ movieRoute.route('/create-user').post((req, res, next) => {
 });
 
 
-movieRoute.route('/fetch-movie/:movietitle').get((req, res, next) => {
+movieRoute.route('/fetch-movie/:id').get((req, res, next) => {
   MovieModel.findById(req.params.id, (err, movie) => {
     if (err) {
       return next(err)

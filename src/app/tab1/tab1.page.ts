@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { MoviecrudService } from '../services/moviecrud.service';
 
-import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -23,8 +22,8 @@ MoviesOnly:any = [];
     // filterSeriesOnly(this.Movies);
     this.Tvshows  = this.Movies.filter(tvshow => tvshow.movietype === 'series') //filter series only
 
-    this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter series only
-console.log("ff", this.MoviesOnly)
+    this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter movies only
+
     })
 
   
@@ -36,12 +35,3 @@ console.log("ff", this.MoviesOnly)
   
 
 }
-
-// function filterSeriesOnly(Tvshows:any) {
-//   return Tvshows.filter(tvshow => tvshow.movietype === 'series');
-// }
-
-// function filterMoviesOnly(Tvshows:any) {
-//   return Tvshows.filter(tvshow => tvshow.movietype === 'series');
-// }
-

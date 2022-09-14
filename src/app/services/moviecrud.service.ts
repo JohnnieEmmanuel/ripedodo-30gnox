@@ -37,19 +37,20 @@ export class MoviecrudService {
   constructor(private httpClient: HttpClient) { }
 
 
-getMovie(id): Observable<Movie[]> {
-  return this.httpClient.get<Movie[]>('http://localhost:5000/api/fetch-movie/' + id)
-    .pipe(
-      tap(_ => console.log(`Movie fetched: ${id}`)),
-      catchError(this.handleError<Movie[]>(`Get movie id=${id}`))
-    );
-}
+
 
 getMovies(): Observable<Movie[]> {
   return this.httpClient.get<Movie[]>('http://localhost:5000/api')
     .pipe(
       tap(movies => console.log('Movies retrieved!')),
       catchError(this.handleError<Movie[]>('Get movie', []))
+    );
+}
+getDetails(id): Observable<Movie[]> {
+  return this.httpClient.get<Movie[]>('http://localhost:5000/api/fetch-movie/' + id)
+    .pipe(
+      tap(_ => console.log(`Movie fetched: ${id}`)),
+      catchError(this.handleError<Movie[]>(`Get movie id=${id}`))
     );
 }
 
