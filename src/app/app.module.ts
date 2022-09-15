@@ -19,11 +19,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [AppComponent, ViewheaderComponent],
 imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, ReactiveFormsModule, 
-  HttpClientModule,Ng2SearchPipeModule, CarouselModule,BrowserAnimationsModule],
+  HttpClientModule,Ng2SearchPipeModule, CarouselModule,BrowserAnimationsModule,SwiperModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   

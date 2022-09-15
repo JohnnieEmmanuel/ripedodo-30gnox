@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
   },
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
+  {
     path: 'uploadmovie',
     loadChildren: () => import('./uploadmovie/uploadmovie.module').then( m => m.UploadmoviePageModule)
   },

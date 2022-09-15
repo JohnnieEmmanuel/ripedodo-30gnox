@@ -6,10 +6,20 @@
 
 <ion-content>
 
-  <div id="container">
-    <ion-item>
-      <input type="file" (change)="onFileChange($event)" />
-    </ion-item>
-    <ion-button color="primary" expand="full" (click)="submitForm()">Upload</ion-button>
-    </div>
+  <ion-slides
+  [pager]="true"
+  [scrollbar]="true"
+  [options]="options"
+
+  (ionSlideWillChange)="slideWillChange()"
+  (ionSlideDidChange)="slideDidChange()"
+
+  #slidesRef
+>
+  <ion-slide>Slide 1</ion-slide>
+  <ion-slide>Slide 2</ion-slide>
+  <ion-slide>Slide 3</ion-slide>
+  <ion-slide>Slide 4</ion-slide>
+  <ion-slide>Slide 5</ion-slide>
+</ion-slides>
 </ion-content>

@@ -27,6 +27,8 @@ movieId:any
       this.information = result;
      this.movieId = id;
      console.log("check info", this.information);
+     console.log("check info", this.information.movietitle);
+
     });
   }
 
