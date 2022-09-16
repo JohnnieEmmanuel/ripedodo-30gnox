@@ -30,6 +30,11 @@ movieId:any
      console.log("check info", this.information.movietitle);
 
     });
+
+  
+  
   }
 
+
+ 
 }

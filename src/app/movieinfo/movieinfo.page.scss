@@ -21,7 +21,7 @@
    display: -webkit-box;
    line-height: 16px;     /* fallback */
    max-height: 400px;      /* fallback */
-   -webkit-line-clamp: 12; /* number of lines to show */
+   -webkit-line-clamp: 15; /* number of lines to show */
    -webkit-box-orient: vertical;
 
   }
@@ -68,7 +68,7 @@
     &__svg {
       position: absolute;
       left: 0;
-      top: 235px;
+      top: 180px;
     }
   }
   
