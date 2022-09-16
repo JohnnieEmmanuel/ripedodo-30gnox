@@ -1,16 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      RIPEDODO
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 
 <ion-content [fullscreen]="true">
-
+	
+	
+	<ion-grid>
+		<ion-row>
+		  
+		  <ion-col>
+			<div class="ion-text-center ">
+				<ion-text color="primary">
+					<h4 style="font-weight: bold;">MOVIES</h4>
+				  </ion-text>
+			</div>
+		  </ion-col>
+		</ion-row>
+	  </ion-grid>
    <section class="w3l-grids">
+	
 		<div class="grids-main ">
+			
 			<div class="container py-lg-3">
 				
 				<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 ">
@@ -37,14 +44,24 @@
 			</div>
 		</div>
 	</section> 
-
-	<ion-icon name="grid"></ion-icon>
+	<ion-grid>
+		<ion-row>
+		  
+		  <ion-col>
+			<div class="ion-text-center ">
+				<ion-text color="primary">
+					<h4 style="font-weight: bold;">TV SHOWS</h4>
+				  </ion-text>
+			</div>
+		  </ion-col>
+		</ion-row>
+	  </ion-grid>
 <section class="w3l-grids">
 	<div class="grids-main ">
 		<div class="container py-lg-3">
 			
 			<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 ">
-					<div class="col-7 box16 " *ngFor="let tvshow of Tvshows ">
+					<div class="col-7 box16 " *ngFor="let tvshow of Tvshows " [routerLink]="['/', 'movie', tvshow._id]">
 						<a >
 							<figure>
 								<img class="img-fluid" [src]="tvshow.movieposter" *ngIf="tvshow.movieposter != 'N/A'"alt="">
