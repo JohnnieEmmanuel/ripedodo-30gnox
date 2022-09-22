@@ -138,6 +138,8 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log("PORT connected: " + port);
 });
+// server.listen(port, '192.168.43.40');
+
 
 app.use(function (error, res) {
   console.error(error.message);
