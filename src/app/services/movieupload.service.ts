@@ -17,6 +17,9 @@ export class Movie {
   movieidmbid: string
   movieposter: string
   movieseasons: number
+  moviecasts:string
+  movieratedpg:string
+  
 }
 
 @Injectable({

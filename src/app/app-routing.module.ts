@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HeadersComponent } from './headers/headers.component';
+import { PlayerComponent } from './player/player.component';
+import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import {ViewheaderComponent} from './viewheader/viewheader.component';
 const routes: Routes = [
   {
@@ -37,7 +39,13 @@ const routes: Routes = [
   {
     path: 'movieinfo',
     loadChildren: () => import('./movieinfo/movieinfo.module').then( m => m.MovieinfoPageModule)
+  },{
+    path: 'videoplayer', component: VideoplayerComponent 
   }
+  ,{
+    path: 'player', component: PlayerComponent 
+  }
+
  
  
 ];

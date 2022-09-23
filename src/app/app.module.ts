@@ -21,11 +21,15 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SwiperModule } from 'swiper/angular';
 
+import {StreamingMedia} from "@ionic-native/streaming-media/ngx"
 @NgModule({
   declarations: [AppComponent, ViewheaderComponent],
 imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, ReactiveFormsModule, 
-  HttpClientModule,Ng2SearchPipeModule, CarouselModule,BrowserAnimationsModule,SwiperModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  HttpClientModule,Ng2SearchPipeModule, CarouselModule,BrowserAnimationsModule,SwiperModule
+
+
+],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },StreamingMedia],
   bootstrap: [AppComponent],
   
 })

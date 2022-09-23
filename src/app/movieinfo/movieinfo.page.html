@@ -19,7 +19,7 @@
   <div class="row cov" >
     <div class="col " >
       <div class="col-12 " style="text-align:center; margin-top: 30px;" >
-        <ion-button shape="round">
+        <ion-button shape="round" [routerLink]="['/videoplayer']">
           <ion-icon slot="start" name="play-outline" ></ion-icon>
           Play
         </ion-button>
@@ -33,20 +33,21 @@
     </div>
   </div>
   <div class="row " >
+    <div class="col-12 " style="text-align:center">
+      <ion-chip color="primary">{{information.moviegenre}}</ion-chip>
+
+      <ion-chip [outline]="true"  color="primary">{{information.movieruntime}}</ion-chip>
+      <ion-chip [outline]="true" color="primary">HD</ion-chip>
+    
+    </div>
+  </div>
+  <div class="row " >
     <div class="col-12 plotsummary" >
       <h4 class="plotdesc">Plot Summary</h4>
       <h1 class="movieplot">{{information.movieplot}}</h1>
     </div>
   </div>
   
-  <div class="row " >
-    <div class="col-12 " style="text-align:center">
-      <ion-chip [outline]="true"  color="primary">{{information.movieruntime}}</ion-chip>
-      <ion-chip [outline]="true" color="primary">HD</ion-chip>
-    
-    </div>
-  </div>
-
 </span>
 </div>
 

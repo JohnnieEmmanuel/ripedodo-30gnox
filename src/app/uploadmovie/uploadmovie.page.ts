@@ -91,7 +91,9 @@ let data = {
   movietype: parsedData2.Type,
   movieidmbid: parsedData2.imdbID,
   movieposter: parsedData2.Poster,
-  movieseasons: parsedData2.TotalSeasons
+  movieseasons: parsedData2.TotalSeasons,
+  moviecasts:parsedData2.Casts,
+  movieratedpg:parsedData2.Ratedpg
 
 }
 console.log(this.movieuploadService.movieupload(data).subscribe((response)=>{
