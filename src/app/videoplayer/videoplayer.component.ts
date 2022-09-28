@@ -8,7 +8,7 @@ import {StreamingMedia,StreamingVideoOptions} from "@ionic-native/streaming-medi
   styleUrls: ['./videoplayer.component.scss'],
 })
 export class VideoplayerComponent implements OnInit {
-videoUrl:string = "";
+videoUrl:string = "https://d1deccugb2p5vs.cloudfront.net/Infinite.mp4";
   constructor(private stream:StreamingMedia) { }
 
   ngOnInit() {}

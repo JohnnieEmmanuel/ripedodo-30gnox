@@ -9,10 +9,10 @@
 
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm"  animated="true"></ion-searchbar>
+  <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm"  animated="true" ></ion-searchbar>
   <ion-list>
    
-    <ion-item *ngFor="let movie of Movies | filter:filterTerm">
+    <ion-item *ngFor="let movie of Movies | filter:filterTerm ">
       <ion-label>{{movie.movietitle}}</ion-label>
       <!-- <ion-label>{{movie._id}}</ion-label>
      <ion-label>{{movie.movieurl}}</ion-label> -->
@@ -20,4 +20,8 @@
     </ion-item>
  
   </ion-list>
+
+
+
+  
 </ion-content>
