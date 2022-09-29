@@ -10,11 +10,16 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
+    path: 'home',
+    loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule)
+  },
+  
+  {
     path: 'search',
     loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
   },
   {
-    path: 'home',
+    path: 'slide',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
@@ -44,6 +49,10 @@ const routes: Routes = [
   }
   ,{
     path: 'player', component: PlayerComponent 
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   }
 
  
