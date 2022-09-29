@@ -9,14 +9,14 @@ import {StreamingMedia,StreamingVideoOptions} from "@ionic-native/streaming-medi
 export class Tab3Page {
 
 
-  videoUrl:string = "";
+  videoUrl:string = "https://d1deccugb2p5vs.cloudfront.net/Infinite.mp4";
   constructor(private stream:StreamingMedia) { }
 
   ngOnInit() {}
 
   streamVideo(){
     var option:StreamingVideoOptions={
-      orientation:"portrait",
+      orientation:"landscape",
       controls:true
     }
     this.stream.playVideo(this.videoUrl, option);

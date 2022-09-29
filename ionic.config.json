@@ -1,7 +1,10 @@
 {
   "name": "ripedodo",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular",
   "id": "c93cb05b"

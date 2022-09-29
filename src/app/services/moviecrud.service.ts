@@ -26,8 +26,10 @@ export class Movie {
 })
 export class MoviecrudService {
 
-  endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
+  // endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
+  endpoint = 'https://ripedodo-backend.herokuapp.com/v1/upload/uploadmoviedetails';
 
+url='https://ripedodo-backend.herokuapp.com'
 
 
   httpOptions = {
@@ -40,14 +42,14 @@ export class MoviecrudService {
 
 
 getMovies(): Observable<Movie[]> {
-  return this.httpClient.get<Movie[]>('http://localhost:5000/api')
+  return this.httpClient.get<Movie[]>(this.url+'/api')
     .pipe(
       tap(movies => console.log('Movies retrieved!')),
       catchError(this.handleError<Movie[]>('Get movie', []))
     );
 }
 getDetails(id): Observable<Movie[]> {
-  return this.httpClient.get<Movie[]>('http://localhost:5000/api/fetch-movie/' + id)
+  return this.httpClient.get<Movie[]>(this.url+'/api/fetch-movie/' + id)
     .pipe(
       tap(_ => console.log(`Movie fetched: ${id}`)),
       catchError(this.handleError<Movie[]>(`Get movie id=${id}`))
