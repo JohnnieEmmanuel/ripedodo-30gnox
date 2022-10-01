@@ -26,9 +26,8 @@ npm-debug.log*
 /.vscode
 /coverage
 /dist
-/node_modules
+node_modules/
 /plugins
 /www
-/ripedodo-backend
 ripedodo-backend/
-
+src/app/server_o/
