@@ -10,17 +10,11 @@ export class Tab3Page {
 
 
   videoUrl:string = "https://d1deccugb2p5vs.cloudfront.net/Infinite.mp4";
-  constructor(private stream:StreamingMedia,private streamingMedia: StreamingMedia) { }
+  constructor(private streamingMedia: StreamingMedia) { }
 
   ngOnInit() {}
 
-  streamVideo(){
-    var option:StreamingVideoOptions={
-      orientation:"landscape",
-      controls:true
-    }
-    this.stream.playVideo(this.videoUrl, option);
-  }
+  
   playVideo(){
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
@@ -29,7 +23,7 @@ export class Tab3Page {
       shouldAutoClose: true,
       controls: true
     };
-    this.streamingMedia.playVideo('https://d1deccugb2p5vs.cloudfront.net/Infinite.mp4', options);
+    this.streamingMedia.playVideo(this.videoUrl, options);
   }
 }
 
