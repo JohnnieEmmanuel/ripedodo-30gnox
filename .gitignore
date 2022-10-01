@@ -30,7 +30,4 @@ node_modules/
 /plugins
 /www
 ripedodo-backend/
-<<<<<<< HEAD
 src/app/server_o/
-=======
->>>>>>> 8c495658 (adding profile module)
