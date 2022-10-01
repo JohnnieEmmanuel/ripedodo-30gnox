@@ -94,3 +94,11 @@ capacitor-cordova-android-plugins
 
 # Copied web assets
 app/src/main/assets/public
+<<<<<<< HEAD
+=======
+
+# Generated Config files
+app/src/main/assets/capacitor.config.json
+app/src/main/assets/capacitor.plugins.json
+app/src/main/res/xml/config.xml
+>>>>>>> e36cc4dd (added tab4 module)

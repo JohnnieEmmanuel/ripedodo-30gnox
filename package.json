@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+<<<<<<< HEAD
     "@awesome-cordova-plugins/streaming-media": "^5.45.0",
     "@capacitor/android": "3.6.0",
     "@capacitor/app": "1.1.1",
@@ -28,14 +29,27 @@
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.3",
     "@capacitor/status-bar": "1.0.8",
+=======
+    "@capacitor/android": "4.3.0",
+    "@capacitor/app": "^4.0.1",
+    "@capacitor/core": "^4.3.0",
+    "@capacitor/haptics": "^4.0.1",
+    "@capacitor/ios": "4.3.0",
+    "@capacitor/keyboard": "^4.0.1",
+    "@capacitor/status-bar": "^4.0.1",
+>>>>>>> e36cc4dd (added tab4 module)
     "@ionic-native/streaming-media": "^5.36.0",
     "@ionic/angular": "^6.1.9",
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.4",
     "@videogular/ngx-videogular": "^6.0.0",
     "bootstrap": "^5.2.0",
+<<<<<<< HEAD
     "cordova-plugin-streaming-media": "^2.3.0",
     "cordova-res": "^0.15.4",
+=======
+    "jetifier": "^2.0.0",
+>>>>>>> e36cc4dd (added tab4 module)
     "jquery": "^3.6.1",
     "ng2-file-upload": "^1.4.0",
     "ng2-search-filter": "^0.5.1",
@@ -58,7 +72,11 @@
     "@angular/compiler": "^14.0.0",
     "@angular/compiler-cli": "^14.0.0",
     "@angular/language-service": "^14.0.0",
+<<<<<<< HEAD
     "@capacitor/cli": "3.6.0",
+=======
+    "@capacitor/cli": "^4.3.0",
+>>>>>>> e36cc4dd (added tab4 module)
     "@ionic/angular-toolkit": "^6.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",

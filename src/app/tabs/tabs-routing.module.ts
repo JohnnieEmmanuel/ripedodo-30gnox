@@ -19,6 +19,14 @@ const routes: Routes = [
         path: 'comingsoon',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
+<<<<<<< HEAD
+=======
+      
+      {
+        path: 'profile',
+        loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
+      },
+>>>>>>> e36cc4dd (added tab4 module)
       {
         path: '',
         redirectTo: '/v1/home',

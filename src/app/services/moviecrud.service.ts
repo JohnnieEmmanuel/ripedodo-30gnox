@@ -26,10 +26,19 @@ export class Movie {
 })
 export class MoviecrudService {
 
+<<<<<<< HEAD
   // endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
   endpoint = 'https://ripedodo-backend.herokuapp.com/v1/upload/uploadmoviedetails';
 
 url='https://ripedodo-backend.herokuapp.com'
+=======
+  // url = 'http://localhost:5000';
+
+  // endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
+
+url='https://ripedodo-backend.herokuapp.com'
+endpoint = this.url+'/v1/upload/uploadmoviedetails';
+>>>>>>> e36cc4dd (added tab4 module)
 
 
   httpOptions = {

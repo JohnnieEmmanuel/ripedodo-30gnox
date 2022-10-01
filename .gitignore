@@ -27,6 +27,12 @@ npm-debug.log*
 /coverage
 /dist
 /node_modules
+<<<<<<< HEAD
 /platforms
 /plugins
 /www
+=======
+/plugins
+/www
+/ripedodo-backend
+>>>>>>> e36cc4dd (added tab4 module)

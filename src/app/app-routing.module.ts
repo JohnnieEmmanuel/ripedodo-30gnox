@@ -13,6 +13,15 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+<<<<<<< HEAD
+=======
+
+{
+  path: '',
+  redirectTo: 'home',
+  pathMatch: 'full'
+},
+>>>>>>> e36cc4dd (added tab4 module)
   {
     path: 'search',
     loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
@@ -52,6 +61,13 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
+<<<<<<< HEAD
+=======
+  },
+  {
+    path: 'tab4',
+    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+>>>>>>> e36cc4dd (added tab4 module)
   }
 
  
