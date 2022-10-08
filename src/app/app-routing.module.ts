@@ -56,9 +56,14 @@ const routes: Routes = [
     path: 'player', component: PlayerComponent 
   },
   {
+    path: 'fullscreen',
+    loadChildren: () => import('./fullscreen/fullscreen.module').then( m => m.FullscreenPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   }
+
  
  
 ];

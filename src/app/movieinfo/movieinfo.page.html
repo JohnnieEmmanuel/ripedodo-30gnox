@@ -4,7 +4,7 @@
 <div class="container">
 
   <ion-fab vertical="top" horizontal="start" slot="fixed">
-    <ion-fab-button [routerLink]="['/home']">
+    <ion-fab-button [routerLink]="['/home']"  routerDirection="backward" >
       <ion-icon name="arrow-back-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -19,7 +19,7 @@
   <div class="row cov" >
     <div class="col " >
       <div class="col-12 " style="text-align:center; margin-top: 30px;" >
-        <ion-button shape="round" [routerLink]="['/player']">
+        <ion-button shape="round" (click)="testVideoPlayerPlugin('mp4')">
           <ion-icon slot="start" name="play-outline" ></ion-icon>
           Play
         </ion-button>
