@@ -16,7 +16,7 @@ import { MoviecrudService } from '../services/moviecrud.service';
 
 export class Tab2Page {
 
-  filterTerm: string;
+  filterTerm: string ='';
 
   Movies: any = [];
   

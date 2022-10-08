@@ -9,10 +9,10 @@
 
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm"  animated="true" ></ion-searchbar>
-  <ion-list>
+  <ion-searchbar placeholder="Surf for Movies, Tv-shows" [(ngModel)]="filterTerm"  animated="true" ></ion-searchbar>
+  <ion-list *ngIf="filterTerm !== ''">
    
-    <ion-item *ngFor="let movie of Movies | filter:filterTerm ">
+    <ion-item  *ngFor="let movie of Movies | filter:filterTerm " [routerLink]="['/', 'movie', movie._id]" routerDirection="forward">
       <ion-label>{{movie.movietitle}}</ion-label>
       <!-- <ion-label>{{movie._id}}</ion-label>
      <ion-label>{{movie.movieurl}}</ion-label> -->
