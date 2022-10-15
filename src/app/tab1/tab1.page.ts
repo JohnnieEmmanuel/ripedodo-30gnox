@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
 
 import { MoviecrudService } from '../services/moviecrud.service';
 
@@ -8,10 +9,33 @@ import { MoviecrudService } from '../services/moviecrud.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  @ViewChild('slidesRef', { static: true }) 
+  slidesRef: IonSlides;
 
   Movies: any = [];
  Tvshows:any = [];
 MoviesOnly:any = [];
+public options = {
+  keyboard: true,
+  slidesPerView:1,
+     autoplay:{delay:7000}
+ 
+}
+
+public slideWillChange() {
+  console.log('Slide will change');
+}
+
+public async slideDidChange() {
+  console.log('Slide did change');
+
+  if (!this.slidesRef) return;
+
+  console.table({
+    isBeginning: await this.slidesRef.isBeginning(),
+    isEnd: await this.slidesRef.isEnd()
+  });
+}
   constructor(private movieCrudService: MoviecrudService) {}
 
   ionViewDidEnter() {
@@ -25,6 +49,12 @@ MoviesOnly:any = [];
     this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter movies only
 
     })
+    
+
+ 
+
+
+ 
 
   
 

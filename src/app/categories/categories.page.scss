@@ -1,15 +1,11 @@
-.img-figcaption{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-font-weight: bolder;
-font-style: 20px;
-color: blueviolet;
-text-transform: uppercase;
+
+.img-fig{
+    border-radius: 8px;
 }
 
-@media  screen  and (min-width:768px  ) {
-    .img-figcaption{
-    font-weight: bolder;
-    font-style: 40px;
-   
-    }
+.fig-col{
+    max-height: 400px;
+}
+#b-btn{
+    width:2rem; height:2rem; text-align:center;
 }

@@ -1,7 +1,34 @@
 
 <ion-content [fullscreen]="true">
 	
-	
+	<ion-grid>
+		<ion-row>
+		  
+		  <ion-col>
+			<div class="ion-text-center ">
+				<ion-slides
+  [pager]="true"
+  [scrollbar]="true"
+  [options]="options"
+
+  (ionSlideWillChange)="slideWillChange()"
+  (ionSlideDidChange)="slideDidChange()"
+
+  #slidesRef
+>
+  <ion-slide *ngFor="let movie of Movies">
+	<figure>
+		<img class="img-fig"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy">
+	  </figure>	
+</ion-slide>
+  
+</ion-slides>
+			</div>
+		  </ion-col>
+		</ion-row>
+		
+	  </ion-grid>
+
 	<ion-grid>
 		<ion-row>
 		  
@@ -13,8 +40,18 @@
 			</div>
 		  </ion-col>
 		</ion-row>
+		<ion-row class="ion-align-items-center scrolling-wrapper flex-row flex-nowrap">
+			<ion-col size="4"  class="fig-col" *ngFor="let movie of Movies" [routerLink]="['/', 'movie', movie._id]">
+			  <figure>
+				<img class="img-fig"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy">
+				<!-- <figcaption class="img-figcaption">{{genre.movietitle}}</figcaption> -->
+			  </figure>
+			  <p></p>
+			</ion-col>
+			
+		  </ion-row>
 	  </ion-grid>
-   <section class="w3l-grids">
+   <!-- <section class="w3l-grids">
 	
 		<div class="grids-main ">
 			
@@ -27,15 +64,15 @@
 									<img class="img-fluid" [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy">
 								</figure>
 								<div class="box-content" >
-									<h3 class="title">{{movie.movietitle}}</h3>
+									<h3 class="title">{{movie.movietitle}}</h3> -->
 									<!-- <h4> <span class="post"><span class="fa fa-clock-o"> </span> {{movie.movieruntime}}
 
 										</span>
 
 									</h4> -->
-								</div>
+								<!-- </div> -->
 								<!-- <span class="fa fa-play video-icon" aria-hidden="true"></span> -->
-							</a>
+							<!-- </a>
 						</div>
 					
 					
@@ -43,7 +80,7 @@
 				</div>
 			</div>
 		</div>
-	</section> 
+	</section>  -->
 	<ion-grid>
 		<ion-row>
 		  
@@ -55,8 +92,18 @@
 			</div>
 		  </ion-col>
 		</ion-row>
+		<ion-row class="ion-align-items-center scrolling-wrapper flex-row flex-nowrap">
+			<ion-col size="4"  class="fig-col" *ngFor="let tvshow of Tvshows" [routerLink]="['/', 'movie', tvshow._id]">
+			  <figure>
+				<img class="img-fig"  [src]="tvshow.movieposter" *ngIf="tvshow.movieposter != 'N/A'"alt="" loading="lazy">
+				<!-- <figcaption class="img-figcaption">{{genre.movietitle}}</figcaption> -->
+			  </figure>
+			  <p></p>
+			</ion-col>
+			
+		  </ion-row>
 	  </ion-grid>
-<section class="w3l-grids">
+<!-- <section class="w3l-grids">
 	<div class="grids-main ">
 		<div class="container py-lg-3">
 			
@@ -67,15 +114,15 @@
 								<img class="img-fluid" [src]="tvshow.movieposter" *ngIf="tvshow.movieposter != 'N/A'"alt="">
 							</figure>
 							<div class="box-content" >
-								<h3 class="title">{{tvshow.movietitle}}</h3>
+								<h3 class="title">{{tvshow.movietitle}}</h3> -->
 								<!-- <h4> <span class="post"><span class="fa fa-clock-o"> </span> {{tvshow.movieruntime}}
 
 									</span>
 
 								</h4> -->
-							</div>
+							<!-- </div> -->
 							<!-- <span class="fa fa-play video-icon" aria-hidden="true"></span> -->
-						</a>
+						<!-- </a>
 					</div>
 				
 				
@@ -83,5 +130,21 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
+<!-- 
+<ion-grid>
+
+ 
+    <ion-row class="ion-align-items-center scrolling-wrapper flex-row flex-nowrap">
+      <ion-col size="4"  class="fig-col" *ngFor="let movie of Movies" [routerLink]="['/', 'movie', movie._id]">
+        <figure>
+          <img class="img-fig"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy"> -->
+          <!-- <figcaption class="img-figcaption">{{genre.movietitle}}</figcaption> -->
+        <!-- </figure>
+        <p></p>
+      </ion-col>
+      
+    </ion-row>
+    
+  </ion-grid> -->
 </ion-content>

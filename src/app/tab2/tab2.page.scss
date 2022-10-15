@@ -5,8 +5,8 @@
 }
 .box{
     display: inline-flex;
-    height: 6rem;
-    width: 40%;
+    height: 5rem;
+    width: 41%;
     margin: 10px 20px 10px 10px;
     border-radius: 8px;
     color: white;
@@ -18,7 +18,8 @@
     
 }
 h4{
-    font-weight: bolder; 
+    font-weight: bolder;
+    font-size: 21px; 
     align-self:center;
        padding-left: 10px;
    }
@@ -29,7 +30,7 @@ h4{
     background-color:  rgb(197, 60, 133);
 }
 .b-2{
-    background-color:  rgb(12, 206, 96);
+    background-color:  rgb(10, 125, 59);
 }
 .b-3{
     background-color:  rgb(216, 119, 0);
@@ -38,13 +39,15 @@ h4{
     background-color:  rgb(113, 141, 1);
 }
 .b-5{
-    background-color:  rgb(19, 64, 126);
+    background-color:  rgb(50, 81, 123);
 }
 .b-6{
-    background-color:  rgb(190, 53, 232);
+    background-color:  rgb(227, 66, 66);
+    
 }
 .b-7{
-    background-color:  rgb(227, 66, 66);
+    background-color:  rgb(99, 11, 125);
+
 }
 .b-8{
     background-color:  rgb(253, 189, 39);

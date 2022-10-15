@@ -27,14 +27,12 @@ export class Movie {
 export class MoviecrudService {
 
   // url = 'http://localhost:5000';
-
-  mov;
   // endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
 
 url='https://ripedodo-backend.herokuapp.com'
 endpoint = this.url+'/v1/upload/uploadmoviedetails';
 
-
+mov;
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

@@ -1,23 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Search
+    <ion-title class="ion-text-center" color="primary">
+      RIPEDODO
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-
 <ion-content [fullscreen]="true">
   <ion-searchbar placeholder="Surf for Movies, Tv-shows" [(ngModel)]="filterTerm"  animated="true" ></ion-searchbar>
   <ion-list *ngIf="filterTerm !== ''">
-<!--    
-    <ion-item  *ngFor="let movie of Movies | filter:filterTerm " [routerLink]="['/', 'movie', movie._id]" routerDirection="forward">
-      <ion-label>{{movie.movietitle}}</ion-label> -->
-      <!-- <ion-label>{{movie._id}}</ion-label>
-     <ion-label>{{movie.movieurl}}</ion-label> -->
 
-    <!-- </ion-item> -->
     <ion-item *ngFor="let movie of Movies | filter:filterTerm " [routerLink]="['/', 'movie', movie._id]" routerDirection="forward">
       <ion-avatar slot="start">
         <img alt="Movie Image" [src]="movie.movieposter" />
@@ -29,7 +22,7 @@
     
  
   </ion-list>
-  <div class="f-box">
+  <div class="f-box" *ngIf="filterTerm == ''">
     <div class="box b-0" [routerLink]="['/', 'categories', 'action']" >
       <h4>
         Action
@@ -37,7 +30,7 @@
     </div>
     <div class="box b-1" [routerLink]="['/', 'categories', 'adventure']">
       <h4>
-        Adventure
+        Adventures
       </h4>
     </div>
     <div class="box b-2" [routerLink]="['/', 'categories', 'romance']">

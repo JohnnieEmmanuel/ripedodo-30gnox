@@ -1,11 +1,13 @@
 <ion-header collapse="fade" [translucent]="true">
   <ion-toolbar>
     <ion-fab vertical="top" horizontal="start">
-      <ion-fab-button [routerLink]="['/v1/search']"  routerDirection="backward" >
-        <ion-icon name="arrow-back-circle"></ion-icon>
+      <ion-fab-button [routerLink]="['/v1/search']"  routerDirection="backward" id="b-btn" >
+       
+        <ion-icon name="arrow-back-circle"></ion-icon> 
       </ion-fab-button>
     </ion-fab>
-    <ion-title > </ion-title>
+    <strong> <ion-title color="primary" class="ion-text-center"> RIPEDODO</ion-title></strong>
+   
   </ion-toolbar>
 </ion-header>
 
@@ -32,18 +34,17 @@
   
   <ion-grid>
 
+ 
     <ion-row class="ion-align-items-center">
-      <ion-col size="4"  *ngFor="let genre of Genres" >
-        <figure height="300px">
-          <img   [src]="genre.movieposter" *ngIf="genre.movieposter != 'N/A'"alt="" loading="lazy">
-          <figcaption class="img-figcaption">{{genre.movietitle}}</figcaption>
+      <ion-col size="4"  class="fig-col" *ngFor="let genre of Genres" [routerLink]="['/', 'movie', genre._id]">
+        <figure>
+          <img class="img-fig"  [src]="genre.movieposter" *ngIf="genre.movieposter != 'N/A'"alt="" loading="lazy">
+          <!-- <figcaption class="img-figcaption">{{genre.movietitle}}</figcaption> -->
         </figure>
         <p></p>
       </ion-col>
       
     </ion-row>
- 
-  
     
   </ion-grid>
   

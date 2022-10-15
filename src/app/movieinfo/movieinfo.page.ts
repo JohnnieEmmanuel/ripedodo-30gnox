@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {MoviecrudService} from '../services/moviecrud.service';
 
 import {StreamingMedia,StreamingVideoOptions} from "@ionic-native/streaming-media/ngx"
@@ -50,7 +50,7 @@ movieId:any
    * @param moviecrudService The movie Service to get data
    
    */
-  constructor(private activatedRoute: ActivatedRoute, private moviecrudService:MoviecrudService,private streamingMedia: StreamingMedia,public modalCtrl: ModalController) { }
+  constructor(private router: Router,private activatedRoute: ActivatedRoute, private moviecrudService:MoviecrudService,private streamingMedia: StreamingMedia,public modalCtrl: ModalController) { }
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');

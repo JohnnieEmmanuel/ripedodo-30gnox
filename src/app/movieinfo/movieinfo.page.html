@@ -1,13 +1,16 @@
-
+<ion-header collapse="fade" [translucent]="true" >
+  <ion-toolbar style="background-color:rgb(0, 0, 0) !important;" >
+    <ion-fab vertical="top" horizontal="start">
+      <ion-fab-button [routerLink]="['/home']" id="b-btn" routerDirection="backward" >
+        <ion-icon name="arrow-back-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
  
 <div class="container">
 
-  <ion-fab vertical="top" horizontal="start" slot="fixed">
-    <ion-fab-button [routerLink]="['/home']"  routerDirection="forward" >
-      <ion-icon name="arrow-back-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 
   <span *ngIf="information">
   <div class="row" >
