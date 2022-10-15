@@ -24,7 +24,7 @@
 						<div class="col-7 col-lg-3 col-md-4 box16 " *ngFor="let movie of MoviesOnly" [routerLink]="['/', 'movie', movie._id]">
 							<a >
 								<figure>
-									<img class="img-fluid" [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="">
+									<img class="img-fluid" [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy">
 								</figure>
 								<div class="box-content" >
 									<h3 class="title">{{movie.movietitle}}</h3>

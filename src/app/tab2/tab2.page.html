@@ -11,16 +11,65 @@
 <ion-content [fullscreen]="true">
   <ion-searchbar placeholder="Surf for Movies, Tv-shows" [(ngModel)]="filterTerm"  animated="true" ></ion-searchbar>
   <ion-list *ngIf="filterTerm !== ''">
-   
+<!--    
     <ion-item  *ngFor="let movie of Movies | filter:filterTerm " [routerLink]="['/', 'movie', movie._id]" routerDirection="forward">
-      <ion-label>{{movie.movietitle}}</ion-label>
+      <ion-label>{{movie.movietitle}}</ion-label> -->
       <!-- <ion-label>{{movie._id}}</ion-label>
      <ion-label>{{movie.movieurl}}</ion-label> -->
 
+    <!-- </ion-item> -->
+    <ion-item *ngFor="let movie of Movies | filter:filterTerm " [routerLink]="['/', 'movie', movie._id]" routerDirection="forward">
+      <ion-avatar slot="start">
+        <img alt="Movie Image" [src]="movie.movieposter" />
+      </ion-avatar>
+      <ion-label style="text-transform: uppercase;">
+        {{movie.movietitle}}
+      </ion-label>
     </ion-item>
+    
  
   </ion-list>
+  <div class="f-box">
+    <div class="box b-0" [routerLink]="['/', 'categories', 'action']" >
+      <h4>
+        Action
+      </h4>
+    </div>
+    <div class="box b-1" [routerLink]="['/', 'categories', 'adventure']">
+      <h4>
+        Adventure
+      </h4>
+    </div>
+    <div class="box b-2" [routerLink]="['/', 'categories', 'romance']">
+      <h4>
+        Romance
+      </h4>
+    </div>
+    <div class="box b-3" [routerLink]="['/', 'categories', 'comedy']">
+      <h4>
+        Comedy
+      </h4>
+    </div>
+    <div class="box b-4" [routerLink]="['/', 'categories', 'drama']">
+      <h4>
+        Drama
+      </h4>
+    </div> 
+    <div class="box b-5" [routerLink]="['/', 'categories', 'thriller']">
+      <h4>
+        Triller
+      </h4>
+    </div>
+    <div class="box b-6" [routerLink]="['/', 'categories', 'crime']">
+      <h4>
+        Crime
+      </h4>
+    </div>
+    <div class="box b-7" [routerLink]="['/', 'categories', 'sci-fi']">
+      <h4>
+        Sci-Fi
+      </h4>
+    </div>
+  </div>
 
-
-  
 </ion-content>

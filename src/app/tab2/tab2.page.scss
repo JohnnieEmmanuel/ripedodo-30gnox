@@ -1,0 +1,54 @@
+.f-box{
+    width: 100%;
+    text-align: center;
+
+}
+.box{
+    display: inline-flex;
+    height: 6rem;
+    width: 40%;
+    margin: 10px 20px 10px 10px;
+    border-radius: 8px;
+    color: white;
+    align-items: center;
+}
+.box:hover{
+    background-color: rgb(69, 57, 57);
+    border:1px solid white
+    
+}
+h4{
+    font-weight: bolder; 
+    align-self:center;
+       padding-left: 10px;
+   }
+.b-0{
+    background-color:  rgb(10, 79, 176);
+}
+.b-1{
+    background-color:  rgb(197, 60, 133);
+}
+.b-2{
+    background-color:  rgb(12, 206, 96);
+}
+.b-3{
+    background-color:  rgb(216, 119, 0);
+}
+.b-4{
+    background-color:  rgb(113, 141, 1);
+}
+.b-5{
+    background-color:  rgb(19, 64, 126);
+}
+.b-6{
+    background-color:  rgb(190, 53, 232);
+}
+.b-7{
+    background-color:  rgb(227, 66, 66);
+}
+.b-8{
+    background-color:  rgb(253, 189, 39);
+}
+
+
+

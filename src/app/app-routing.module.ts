@@ -59,10 +59,20 @@ const routes: Routes = [
     path: 'fullscreen',
     loadChildren: () => import('./fullscreen/fullscreen.module').then( m => m.FullscreenPageModule)
   },
+  
+  {
+    path: 'categories',
+    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'categories/:tag',
+    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+  },
   {
     path: '**',
     loadChildren: () => import('./pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   }
+
 
  
  

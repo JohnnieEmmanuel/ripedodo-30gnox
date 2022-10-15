@@ -124,7 +124,7 @@ movieId:any
         testApi: this.testApi,
         platform: this.platform
       },
-      swipeToClose: false
+      swipeToClose: true
     });
     await modal.present();
       }
@@ -144,7 +144,8 @@ movieId:any
       errorCallback: (e) => { console.log('Error streaming') },
       orientation: 'landscape',
       shouldAutoClose: true,
-      controls: true
+      controls:true
+      
     };
     this.streamingMedia.playVideo(this.videoUrl, options);
   }

@@ -1,0 +1,51 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar>
+    <ion-fab vertical="top" horizontal="start">
+      <ion-fab-button [routerLink]="['/v1/search']"  routerDirection="backward" >
+        <ion-icon name="arrow-back-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-title > </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+ 
+  <!-- <ion-grid>
+
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4"  *ngFor="let movie of MoviesOnly" [routerLink]="['/', 'movie', movie._id]">
+        <figure height="300px">
+          <img   [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy">
+          <figcaption class="img-figcaption">{{movie.movietitle}}</figcaption>
+        </figure>
+        <p></p>
+      </ion-col>
+      
+    </ion-row>
+ 
+  
+    
+  </ion-grid> -->
+
+  
+  <ion-grid>
+
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4"  *ngFor="let genre of Genres" >
+        <figure height="300px">
+          <img   [src]="genre.movieposter" *ngIf="genre.movieposter != 'N/A'"alt="" loading="lazy">
+          <figcaption class="img-figcaption">{{genre.movietitle}}</figcaption>
+        </figure>
+        <p></p>
+      </ion-col>
+      
+    </ion-row>
+ 
+  
+    
+  </ion-grid>
+  
+  
+  </ion-content>
