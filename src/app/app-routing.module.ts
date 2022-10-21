@@ -68,6 +68,12 @@ const routes: Routes = [
     path: 'categories/:tag',
     loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
   },
+  
+  {
+    path: 'watchlater/:id',
+    loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
+
+  },
   {
     path: '**',
     loadChildren: () => import('./pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)

@@ -1,19 +1,105 @@
-<ion-content>
-    <ion-grid>
-         <ion-row>
-          <!--  <ion-col>
-                <ion-textarea rows="5" [(ngModel)]="videoUrl" placeholder="Enter Video Url"></ion-textarea>
-            </ion-col>
-        </ion-row> <br/>
-        <ion-row> -->
-            <ion-col>
-                <ion-button (click)="streamVideo()" expand="full">stream video</ion-button>
-            </ion-col>
-            <ion-col>
-                <ion-button (click)="playVideo()" expand="full">play video</ion-button>
-            </ion-col>
-        </ion-row> 
-    </ion-grid>
+<ion-header collapse="fade" [translucent]="true">
+    <ion-toolbar>
+      <ion-title class="ion-text-center" color="primary">
+        RIPEDODO
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content [fullscreen]="true">
+	<ion-segment value="custom">
+		<ion-segment-button value="custom">
+		  <ion-label>Watch Later</ion-label>
+		</ion-segment-button>
+		<ion-segment-button id="open-modal">
+		  <ion-label>Coming Soon</ion-label>
+		</ion-segment-button>
+	  </ion-segment>
+	<!--grids-sec1-->
+	<section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container py-lg-3">
+			
+				<div class="w3l-populohny-grids">
+					<div class="item vhny-grid" *ngFor="let ark of Darks">
+						<div class="box16">
+							<a href="genre.html">
+								<figure>
+									<img class="img-fluid" [src]="ark.movieposter" alt="">
+								</figure>
+								<div class="box-content">
+									<h3 class="title">{{ark.movietitle}}</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
 
-    
+										</span>
+
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//grids-sec1-->
+	
+	
+	<ion-modal #modal trigger="open-modal" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+		<ng-template>
+		  <ion-header>
+			<ion-toolbar>
+			  <ion-title>Modal</ion-title>
+			  <ion-buttons slot="end">
+				<ion-button (click)="modal.dismiss()">Close</ion-button>
+			  </ion-buttons>
+			</ion-toolbar>
+		  </ion-header>
+		  <ion-content>
+			<ion-list>
+			  <ion-item>
+				<ion-avatar slot="start">
+				  <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+				</ion-avatar>
+				<ion-label>
+				  <h2>Connor Smith</h2>
+				  <p>Sales Rep</p>
+				</ion-label>
+			  </ion-item>
+			  <ion-item>
+				<ion-avatar slot="start">
+				  <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
+				</ion-avatar>
+				<ion-label>
+				  <h2>Daniel Smith</h2>
+				  <p>Product Designer</p>
+				</ion-label>
+			  </ion-item>
+			  <ion-item>
+				<ion-avatar slot="start">
+				  <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
+				</ion-avatar>
+				<ion-label>
+				  <h2>Greg Smith</h2>
+				  <p>Director of Operations</p>
+				</ion-label>
+			  </ion-item>
+			  <ion-item>
+				<ion-avatar slot="start">
+				  <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
+				</ion-avatar>
+				<ion-label>
+				  <h2>Zoey Smith</h2>
+				  <p>CEO</p>
+				</ion-label>
+			  </ion-item>
+			</ion-list>
+		  </ion-content>
+		</ng-template>
+	  </ion-modal>
+   
 </ion-content>
+

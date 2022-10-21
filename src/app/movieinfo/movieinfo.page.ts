@@ -7,7 +7,8 @@ import { FullscreenPage } from '../fullscreen/fullscreen.page';
 
 import { Capacitor } from '@capacitor/core';
 import { ModalController } from '@ionic/angular';
-
+import { MovieuploadService,Movie } from '../services/movieupload.service';
+import { WatchlaterService } from '../services/watchlater.service';
 
 @Component({
   selector: 'app-movieinfo',
@@ -50,7 +51,7 @@ movieId:any
    * @param moviecrudService The movie Service to get data
    
    */
-  constructor(private router: Router,private activatedRoute: ActivatedRoute, private moviecrudService:MoviecrudService,private streamingMedia: StreamingMedia,public modalCtrl: ModalController) { }
+  constructor(private watchlaterService:WatchlaterService,private router: Router,private activatedRoute: ActivatedRoute, private moviecrudService:MoviecrudService,private streamingMedia: StreamingMedia,public modalCtrl: ModalController, private movieuploadService:MovieuploadService) { }
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -149,6 +150,29 @@ movieId:any
     };
     this.streamingMedia.playVideo(this.videoUrl, options);
   }
+
+  onWatchLater(){
+     // Get the ID that was passed with the URL
+     let id = this.activatedRoute.snapshot.paramMap.get('id');
+ 
+      this.movieId = id;
+     console.log(this.movieId)
+
+let data = {
+  
+  _id: this.movieId
+
+}
+console.log(this.watchlaterService.watchlater(data).subscribe((response)=>{
+  console.log(response);
+
+}))
+
+
+
+
+  }
+
 }
  
 

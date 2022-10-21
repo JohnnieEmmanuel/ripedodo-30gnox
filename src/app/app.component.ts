@@ -10,23 +10,24 @@ import { MoviecrudService } from './services/moviecrud.service';
   
 })
 export class AppComponent {
-  Movies: any = [];
-  Tvshows:any = [];
- MoviesOnly:any = [];
-   constructor(private movieCrudService: MoviecrudService) {}
+//   Movies: any = [];
+//   Tvshows:any = [];
+//  MoviesOnly:any = [];
+//    constructor(private movieCrudService: MoviecrudService) {}
  
-   ionViewDidEnter() {
-     this.movieCrudService.getMovies().subscribe((response) => {
-       this.Movies = response;
-       console.log(this.Movies);
+//    ionViewDidEnter() {
+//      this.movieCrudService.getMovies().subscribe((response) => {
+//        this.Movies = response;
+//        console.log(this.Movies);
  
-     // filterSeriesOnly(this.Movies);
-     this.Tvshows  = this.Movies.filter(tvshow => tvshow.movietype === 'series') //filter series only
+//      // filterSeriesOnly(this.Movies);
+//      this.Tvshows  = this.Movies.filter(tvshow => tvshow.movietype === 'series') //filter series only
  
-     this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter movies only
+//      this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter movies only
  
-     })
+//      })
  
    
  
-    }}
+//     }
+}
