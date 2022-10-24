@@ -1,10 +1,47 @@
-<ion-header>
+<ion-header collapse="fade" [translucent]="true">
   <ion-toolbar>
-    <ion-title>tab4</ion-title>
+    <ion-title class="ion-text-center" color="primary">
+      RIPEDODO
+    </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <p> Profile Page SHows </p>
+<ion-content [fullscreen]="true">
+<div class="cs cs-text">
+  <strong><h1>Coming Soon</h1></strong>
+</div>
+<!--grids-sec1-->
+<section class="w3l-grids">
+  <div class="grids-main py-5">
+    <div class="container py-lg-3">
+    
+      <div class="w3l-populohny-grids">
+        <div class="item vhny-grid" *ngFor="let movie of Movies">
+          <div class="box16">
+              <figure >
+                <img class="img-fluid img" [src]="movie.movieposter" alt="">
+              </figure>
+              <div class="box-content">
+                <h3 class="title">{{movie.movietitle}}</h3>
+                <h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+
+                  </span>
+
+                  <span class="post fa fa-heart text-right"></span>
+                </h4>
+              </div>
+              <span class="fa fa-play video-icon" aria-hidden="true"></span>
+          
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!--//grids-sec1-->
+
 
 </ion-content>
+

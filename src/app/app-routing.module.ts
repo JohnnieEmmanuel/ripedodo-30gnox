@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { HeadersComponent } from './headers/headers.component';
-import { PlayerComponent } from './player/player.component';
+
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import {ViewheaderComponent} from './viewheader/viewheader.component';
 const routes: Routes = [
@@ -23,10 +22,7 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
   },
-  {
-    path: 'slide',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  },
+  
   {
     path: 'uploadmovie',
     loadChildren: () => import('./uploadmovie/uploadmovie.module').then( m => m.UploadmoviePageModule)
@@ -39,9 +35,7 @@ const routes: Routes = [
   {
     path: 'viewheader', component: ViewheaderComponent 
   },
-  {
-    path: 'headers', component: HeadersComponent 
-  },
+
   {
     path: 'movie/:id',
     loadChildren: () => import('./movieinfo/movieinfo.module').then( m => m.MovieinfoPageModule)
@@ -52,9 +46,7 @@ const routes: Routes = [
   },{
     path: 'videoplayer', component: VideoplayerComponent 
   }
-  ,{
-    path: 'player', component: PlayerComponent 
-  },
+  ,
   {
     path: 'fullscreen',
     loadChildren: () => import('./fullscreen/fullscreen.module').then( m => m.FullscreenPageModule)

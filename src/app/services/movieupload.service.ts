@@ -47,6 +47,12 @@ movieupload(movie: Movie): Observable<any> {
     );
 }
 
+comingsoon(movie: Movie): Observable<any> {
+  return this.httpClient.post<Movie>(this.endpoint+'/comingsoon',movie , this.httpOptions)
+    .pipe(
+      catchError(this.handleError<Movie>('Error occured'))
+    );
+}
 
 // JSON.stringify(movie)
 private handleError<T>(operation = 'operation', result?: T) {

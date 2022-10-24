@@ -21,15 +21,18 @@
     background-position: center;
     }
 
-    .img-fig{
-        border-radius: 8px;
-    }
     ion-slides {
         height: 300px;
-      --background: var(--ion-color-dark);
-        --bullet-background: rgb(var(--ion-color-primary-rgb), 0.5);
-        --bullet-background-active: var(--ion-color-primary);
-        --scroll-bar-background: var(--ion-color-dark);
+        width:100%;
+      --background: transparent;
+        --bullet-background:transparent;
+        --bullet-background-active: transparent;
+        --scroll-bar-background:transparent;
       }
+      
+    .img-fig{
+      border-radius: 10px;
+      
+  }
 
-   
+  

@@ -24,6 +24,8 @@ export class UploadmoviePage implements OnInit {
   private file: File;
   results: Observable<any>;
   searchTerm: string = '';
+  comingsoonTerm: string = '';
+
   type: SearchType = SearchType.all;
  
   /**
@@ -36,6 +38,10 @@ export class UploadmoviePage implements OnInit {
   searchChanged() {
     // Call our service function which returns an Observable
     this.results = this.movieService.searchData(this.searchTerm, this.type);
+  }
+  comingsoonChanged() {
+    // Call our service function which returns an Observable
+    this.results = this.movieService.searchData(this.comingsoonTerm, this.type);
   }
 
 
@@ -108,6 +114,56 @@ console.log(this.movieuploadService.movieupload(data).subscribe((response)=>{
 
   }
 
+
+  onComingsoon(temp: any){
+    // Get the ID that was passed with the URL
+    // let id = this.activatedRoute.snapshot.paramMap.get('id');
+let id = temp;
+console.log("this is the movie is",id)
+ 
+    // Get the information from the API
+    this.movieService.getDetails(id).subscribe(result => {
+      this.information = result;
+     this.movieId = id;
+     let moviedata = this.information
+     console.log(moviedata);
+
+let parseJfile = JSON.stringify(moviedata);
+const parsedData2 = JSON.parse(parseJfile);
+console.log("test test"+parsedData2)
+console.log(parsedData2.Year)
+
+let url = 'https://ripedodo.s3.amazonaws.com/uploads/'+parsedData2.Title+'.mp4';
+let movieURL = url.replace(/\s/g, '+');
+
+// let movieURL = movieURLNospace.toLocaleLowerCase();
+console.log(movieURL)
+let data = {
+ movietitle: parsedData2.Title,
+ movieurl: movieURL,
+ movieruntime: parsedData2.Runtime,
+ movieplot:parsedData2.Plot,
+ moviegenre: parsedData2.Genre,
+ movieresponse: parsedData2.Response,
+ movietype: parsedData2.Type,
+ movieidmbid: parsedData2.imdbID,
+ movieposter: parsedData2.Poster,
+ movieseasons: parsedData2.TotalSeasons,
+ moviecasts:parsedData2.Casts,
+ movieratedpg:parsedData2.Ratedpg
+
+}
+console.log(this.movieuploadService.comingsoon(data).subscribe((response)=>{
+ console.log(response);
+
+}))
+
+
+
+
+    });
+
+ }
 
  
 

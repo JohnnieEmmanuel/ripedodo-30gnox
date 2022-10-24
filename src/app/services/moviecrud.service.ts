@@ -56,6 +56,14 @@ getDetails(id): Observable<Movie[]> {
       catchError(this.handleError<Movie[]>(`Get movie id=${id}`))
     );
 }
+getComingsoon(): Observable<Movie[]> {
+  this.mov = this.httpClient.get<Movie[]>(this.url+'/api/comingsoon')
+  return this.mov
+    .pipe(
+      tap(movies => console.log('Movies retrieved!')),
+      catchError(this.handleError<Movie[]>('Get movie', []))
+    );
+}
 
 movieupload(movie: Movie): Observable<any> {
   return this.httpClient.post<Movie>(this.endpoint, JSON.stringify(movie), this.httpOptions)

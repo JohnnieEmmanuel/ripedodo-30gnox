@@ -16,12 +16,12 @@ const routes: Routes = [
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'comingsoon',
+        path: 'watchlater',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       
       {
-        path: 'profile',
+        path: 'comingsoon',
         loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
       },
       {
