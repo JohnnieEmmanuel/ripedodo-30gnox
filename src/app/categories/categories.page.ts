@@ -1,6 +1,11 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/prefer-for-of */
 import { Component, OnInit } from '@angular/core';
 import { Router , ActivatedRoute} from '@angular/router';
 import { AnimationController } from '@ionic/angular';
+import { of } from 'rxjs';
 import { MoviecrudService } from '../services/moviecrud.service';
 
 @Component({
@@ -12,54 +17,47 @@ export class CategoriesPage implements OnInit {
 
   /**
    * @param activatedRoute Information about the route we are on
-   
-   */ 
-  
-   filterTerm: string ='';
+   */
+
+   filterTerm ='';
 
    Movies: any = [];
-   Tvshows:any = [];
-  MoviesOnly:any = [];
-  Genres:any =[]
-  ss:any=[]
+   Tvshows: any = [];
+  MoviesOnly: any = [];
+  Genres: any =[];
+ 
 
-   constructor(private activatedRoute: ActivatedRoute,private movieCrudService: MoviecrudService,private animationCtrl: AnimationController, public router:Router) {}
- 
- 
-   
+   constructor(private activatedRoute: ActivatedRoute,private movieCrudService: MoviecrudService,private animationCtrl: AnimationController, public router: Router) {}
+
+
+
    ionViewDidEnter() {
-    let tag = this.activatedRoute.snapshot.paramMap.get('tag');
-    console.log("CATEGORY:", tag)
-  
+    const tag = this.activatedRoute.snapshot.paramMap.get('tag');
+    console.log('CATEGORY:', tag);
+
      this.movieCrudService.getMovies().subscribe((response) => {
        this.Movies = response;
-       let da = this.Movies.map(dak => dak.moviegenre)
-     
-       console.log(da);
-      //  console.log(this.Movies)
-
-
-this.ss = this.Movies
-
-this.Genres = this.Movies.filter(genre => genre.moviegenre.toLowerCase().includes(tag))
- // filterSeriesOnly(this.Movies);
- this.Tvshows  = this.Movies.filter(tvshow => tvshow.movietype === 'series') //filter series only
-    
- this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter movies only
-
-     })
-
-    
-        
-    }
  
-     
-   
-   
+
+this.Genres = this.Movies.filter(genre => genre.moviegenre.search(tag) >= 0);
+
+ this.Tvshows  = this.Movies.filter(tvshow => tvshow.movietype === 'series'); //filter series only
+
+ this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie'); //filter movies only
+
+     });
+
+
+
+    }
+
+
+
+
 
   ngOnInit() {
-    
-   
+
+
 
     // this.moviecrudService.getDetails(id).subscribe(result => {
     //   this.information = result;
@@ -97,8 +95,6 @@ this.Genres = this.Movies.filter(genre => genre.moviegenre.toLowerCase().include
       .addAnimation([backdropAnimation, wrapperAnimation]);
   };
 
-  leaveAnimation = (baseEl: HTMLElement) => {
-    return this.enterAnimation(baseEl).direction('reverse');
-  };
+  leaveAnimation = (baseEl: HTMLElement) => this.enterAnimation(baseEl).direction('reverse');
 }
 

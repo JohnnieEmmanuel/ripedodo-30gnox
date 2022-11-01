@@ -16,11 +16,11 @@ export class Watchlater {
 })
 export class WatchlaterService {
 
-  // url = 'http://localhost:5000';
-  // endpoint = 'http://localhost:5000/v1/list';
+  url = 'http://localhost:5000';
+  endpoint = 'http://localhost:5000/v1/list';
 
-url='https://ripedodo-backend.herokuapp.com'
-endpoint = this.url+'/v1/list';
+// url='https://ripedodo-backend.herokuapp.com'
+// endpoint = this.url+'/v1/list';
 
 mov;
 

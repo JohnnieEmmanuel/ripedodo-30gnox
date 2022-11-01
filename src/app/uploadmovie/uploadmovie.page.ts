@@ -68,8 +68,10 @@ export class UploadmoviePage implements OnInit {
   onAdd(){
      // Get the ID that was passed with the URL
      let id = this.activatedRoute.snapshot.paramMap.get('id');
- 
-  
+  if(id==null){
+    console.log("no param passed")
+  }
+  else{
      // Get the information from the API
      this.movieService.getDetails(id).subscribe(result => {
        this.information = result;
@@ -82,7 +84,9 @@ const parsedData2 = JSON.parse(parseJfile);
 console.log("test test"+parsedData2)
 console.log(parsedData2.Year)
 
-let url = 'https://ripedodo.s3.amazonaws.com/uploads/'+parsedData2.Title+'.mp4';
+// let url = 'https://ripedodo.s3.amazonaws.com/uploads/'+parsedData2.Title+'.mp4';
+let url = 'https://d1deccugb2p5vs.cloudfront.net/'+parsedData2.Title+'.mp4';
+
 let movieURL = url.replace(/\s/g, '+');
 
 // let movieURL = movieURLNospace.toLocaleLowerCase();
@@ -97,20 +101,22 @@ let data = {
   movietype: parsedData2.Type,
   movieidmbid: parsedData2.imdbID,
   movieposter: parsedData2.Poster,
-  movieseasons: parsedData2.TotalSeasons,
-  moviecasts:parsedData2.Casts,
+  movieseasons: parsedData2.totalSeasons,
+  moviecasts:parsedData2.Actors,
   movieratedpg:parsedData2.Ratedpg
 
 }
-console.log(this.movieuploadService.movieupload(data).subscribe((response)=>{
+this.movieuploadService.movieupload(data).subscribe((response)=>{
   console.log(response);
 
-}))
+})
 
 
 
 
      });
+  }
+    
 
   }
 
@@ -133,7 +139,9 @@ const parsedData2 = JSON.parse(parseJfile);
 console.log("test test"+parsedData2)
 console.log(parsedData2.Year)
 
-let url = 'https://ripedodo.s3.amazonaws.com/uploads/'+parsedData2.Title+'.mp4';
+// let url = 'https://ripedodo.s3.amazonaws.com/uploads/'+parsedData2.Title+'.mp4';
+let url = 'https://d1deccugb2p5vs.cloudfront.net/'+parsedData2.Title+'.mp4';
+
 let movieURL = url.replace(/\s/g, '+');
 
 // let movieURL = movieURLNospace.toLocaleLowerCase();
