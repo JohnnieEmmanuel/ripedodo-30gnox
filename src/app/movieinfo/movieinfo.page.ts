@@ -17,7 +17,7 @@ import { WatchlaterService } from '../services/watchlater.service';
 })
 export class MovieinfoPage implements OnInit {
 
-  videoUrl:string = "https://d1deccugb2p5vs.cloudfront.net/Infinite.mp4";
+  videoUrl:string ;
 
 
   public wPlatform = false;
@@ -35,7 +35,7 @@ export class MovieinfoPage implements OnInit {
   private bkmodeEnabled = true;
 
 /* Video with subtitles in spanish*/
-private mp4 = 'https://d1deccugb2p5vs.cloudfront.net/Infinite.mp4';
+public mp4 ;
 private mp4st = 'https://brenopolanski.github.io/html5-video-webvtt-example/MIB2-subtitles-pt-BR.vtt';
 private mp4stLang = 'es';
 private mp4stOptions: any = {backgroundColor:'rgba(0,0,0,0)', fontSize: 18, foregroundColor:'rgba(128,128,0,1)'};
@@ -64,7 +64,9 @@ movieId:any
      console.log("check info", this.information);
      console.log("check info", this.information.movietitle);
      console.log("check info", this.information.movieurl);
-
+      this.videoUrl = this.information.movieurl
+      this.mp4 = this.information.movieurl
+      console.log(this.videoUrl)
 
     });
 
@@ -101,7 +103,7 @@ movieId:any
       
       }
       else if(this.wPlatform){
-        if(this.videoUrl === 'https://d1deccugb2p5vs.cloudfront.net/Infinite.mp4') {
+        if(this.videoUrl ) {
       this.sturl = this.mp4st;
       this.stlang = this.mp4stLang ;
       this.stoptions = this.mp4stOptions;
