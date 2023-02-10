@@ -17,6 +17,8 @@ export class Movie {
   movietype: string
   movieidmbid: string
   movieposter: string
+  movieseasons: string
+
   
  
 }
@@ -26,14 +28,14 @@ export class Movie {
 })
 export class MoviecrudService {
 
-  // url = 'http://localhost:5000';
-  // endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
+  url = 'http://localhost:5000';
+  endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
 
 // url='https://ripedodo-backend.herokuapp.com'
 // endpoint = this.url+'/v1/upload/uploadmoviedetails';
 
-url='https://ripedodo-backend.vercel.app'
-endpoint = this.url+'/v1/upload/uploadmoviedetails';
+// url='https://ripedodo-backend.vercel.app'
+// endpoint = this.url+'/v1/upload/uploadmoviedetails';
 
 
 mov;

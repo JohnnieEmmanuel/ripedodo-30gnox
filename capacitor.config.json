@@ -2,5 +2,13 @@
 	"appId": "io.ionic.starter",
 	"appName": "ripedodo",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"plugins":{
+		"launchShowDuration": 3000,
+		"launchAutoHide": true,
+		"androidScaleType":"CENTER_CROP",
+		"splashImmersive":true,
+		"backgroundColor": "#ffffff"
+	
+	}
 }

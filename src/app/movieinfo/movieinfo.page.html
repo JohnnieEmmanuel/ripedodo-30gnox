@@ -21,7 +21,7 @@
   </div>
   <div class="row cov" >
     <div class="col " >
-      <div class="col-12 " style="text-align:center; margin-top: 30px;" >
+      <div class="col-12 " *ngIf="information.movietype === 'movie'" style="text-align:center; margin-top: 30px;" >
         <ion-button shape="round" (click)="testVideoPlayerPlugin('mp4')">
           <ion-icon slot="start" name="play-outline" ></ion-icon>
           PLAY
