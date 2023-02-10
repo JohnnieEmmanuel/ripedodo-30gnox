@@ -17,6 +17,16 @@ import { WatchlaterService } from '../services/watchlater.service';
 })
 export class MovieinfoPage implements OnInit {
 
+  episodes: string[] = ["episode 1", "episode 2", "episode 3", "episode 4", "episode 5"];
+
+  // pushLog(msg) {
+  //   this.episodes.unshift(msg);
+  // }
+
+  // handleChange(e) {
+  //   this.pushLog('ionChange fired with value: ' + e.detail.value);
+  // }
+
   videoUrl:string ;
 
 
