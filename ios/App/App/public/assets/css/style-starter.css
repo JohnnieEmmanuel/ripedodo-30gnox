@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-step-backward:before {
+  content: "";
+}
+
+.fa-fast-backward:before {
+  content: "";
+}
+
+.fa-backward:before {
+  content: "";
+}
+
+.fa-play:before {
+  content: "";
+}
+
+.fa-pause:before {
+  content: "";
+}
+
+.fa-stop:before {
+  content: "";
+}
+
+
+.fa-arrow-right:before {
+  content: "";
+}
+
+.fa-arrow-up:before {
+  content: "";
+}
+
+.fa-arrow-down:before {
+  content: "";
+}
+
+
+/*--/popular-grids--*/
+.w3l-grids .w3l-populohny-grids {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px 30px;
+}
+
+/*--//popular-grids--*/
+/*--/grids--*/
+.w3l-grids .genre-grids {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.w3l-grids .box16 {
+  text-align: center;
+  color: #fff;
+  position: relative;
+  display: block;
+}
+
+.w3l-grids .box16 figure {
+  margin: 0 0 0rem;
+}
+
+.w3l-grids .box16 .box-content,
+.w3l-grids .box16:after {
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.w3l-grids .box16:after {
+  content: "";
+  height: 100%;
+  background:linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.08) 69%, #2c25ff 100%);
+  top: 0;
+  border-radius: 6px;
+  transition: all .5s ease 0s;
+}
+
+.w3l-grids .box16 .post,
+.w3l-grids .box16 .title {
+  transform: translateY(30px);
+  transition: all 0.4s cubic-bezier(0.13, 0.62, 0.81, 0.91) 0s;
+}
+
+.w3l-grids .box16:hover:after {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0, rgba(0, 0, 0, 0.09) 11%, rgba(0, 0, 0, 0.12) 13%, rgba(0, 0, 0, 0.19) 20%, rgba(0, 0, 0, 0.29) 28%, rgba(0, 0, 0, 0.29) 29%, rgba(0, 0, 0, 0.42) 38%, rgba(0, 0, 0, 0.46) 43%, rgba(0, 0, 0, 0.53) 47%, rgba(0, 0, 0, 0.75) 69%, rgba(0, 0, 0, 0.87) 84%, rgba(0, 0, 0, 0.98) 99%, rgba(0, 0, 0, 0.94) 100%);
+}
+
+.w3l-grids .box16 img {
+  width: 100%;
+  height: 300px;
+}
+
+.w3l-grids .box16 .box-content {
+  padding: 15px;
+  bottom: 30px;
+  z-index: 1;
+  text-align: left;
+}
+
+.w3l-grids .box16 .box-content h4 {
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+  margin: 10px 0 0 0;
+}
+
+.w3l-grids .box16 .title {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0 0 5px;
+  color: #fff;
+}
+
+.w3l-grids .box16 span {
+  display: inline-block;
+  padding: 0px 0;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.w3l-grids .box16 span.fa.fa-heart {
+  color: var(--theme-rose);
+}
+
+.w3l-grids .box16 span.video-icon {
+  position: absolute;
+  z-index: 9;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  line-height: 39px;
+  padding-left: 2px;
+}
+
+.w3l-grids .box16 .social li a,
+.w3l-grids .box17 .icon li a {
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+}
+
+.w3l-grids .box16:hover .post,
+.w3l-grids .box16:hover .title {
+  transform: translateY(0);
+}
+
+.w3l-grids .box16 .social {
+  list-style: none;
+  padding: 0 0 5px;
+  margin: 40px 0 25px;
+  opacity: 0;
+  position: relative;
+  transform: perspective(500px) rotateX(-90deg) rotateY(0) rotateZ(0);
+  transition: all 0.6s cubic-bezier(0, 0, 0.58, 1) 0s;
+}
+
+.w3l-grids .box16:hover .social {
+  opacity: 1;
+  transform: perspective(500px) rotateX(0) rotateY(0) rotateZ(0);
+}
+
+.w3l-grids .box16 .social:before {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #fff;
+  margin: 0 auto;
+  position: absolute;
+  top: -23px;
+  left: 0;
+  right: 0;
+}
+
+.w3l-grids .box16 .social li {
+  display: inline-block;
+}
+
+.w3l-grids a.title-gd {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0 0 5px;
+  color: var(--theme-title);
+}
+
+.w3l-grids a.title-gd {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 20px 0 7px 0;
+  color: var(--theme-title);
+  display: inline-block;
+}
+
+.w3l-grids .vhny-grid {
+  margin-bottom: 24px;
+}
+
+.w3l-grids a.title-gd:hover {
+  color: var(--theme-rose);
+  transition: 0.3s ease-in-out;
+}
+
+.w3l-grids .vhny-grid p {
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.w3l-grids .two-gridshny-right p {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@media (max-width:992px) {
+  .w3l-grids .genre-grids {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .w3l-grids .box16 {
+    margin-bottom: 0;
+  }
+
+  .w3l-grids .w3l-populohny-grids {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media (max-width:480px) {
+  .w3l-grids .box16 span {
+    font-size: 12px;
+  }
+
+  .w3l-grids .w3l-populohny-grids {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 20px;
+  }
+
+  .w3l-grids .w3l-populohny-grids {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 20px;
+  }
+}
+
+
+
