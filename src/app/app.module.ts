@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SwiperModule } from 'swiper/angular';
 
 import {StreamingMedia} from "@ionic-native/streaming-media/ngx"
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 @NgModule({
   declarations: [AppComponent, ViewheaderComponent],
 imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, ReactiveFormsModule, 
@@ -29,7 +30,7 @@ imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, 
 
 
 ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },StreamingMedia],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },StreamingMedia, SplashScreen],
   bootstrap: [AppComponent],
   
 })

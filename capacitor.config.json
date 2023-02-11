@@ -4,11 +4,18 @@
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"plugins":{
-		"launchShowDuration": 3000,
-		"launchAutoHide": true,
-		"androidScaleType":"CENTER_CROP",
-		"splashImmersive":true,
-		"backgroundColor": "#ffffff"
+		"SplashScreen": {
+			"launchShowDuration": 3000,
+			"launchAutoHide": true,
+			"androidSplashResourceName": "splash",
+			"androidScaleType": "CENTER_CROP",
+			"androidSpinnerStyle": "large",
+			"iosSpinnerStyle": "small",
+			"spinnerColor": "#999999",
+			"showSpinner": true,
+			"splashFullScreen": true,
+			"splashImmersive": true
+		  }
 	
 	}
 }

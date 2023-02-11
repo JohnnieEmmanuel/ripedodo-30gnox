@@ -32,6 +32,7 @@
     "@capacitor/keyboard": "^4.0.1",
     "@capacitor/status-bar": "^4.0.1",
     "@capacitor/toast": "^4.0.1",
+    "@ionic-native/splash-screen": "^5.36.0",
     "@ionic-native/streaming-media": "^5.36.0",
     "@ionic/angular": "^6.1.9",
     "@tailwindcss/forms": "^0.5.2",
