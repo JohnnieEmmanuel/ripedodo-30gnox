@@ -66,22 +66,25 @@ const routes: Routes = [
     path: 'watchlater/:id',
     loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
 
-  },
- 
+  },  
+  {
+    path: 'profile', component: ProfileComponent }
+    ,
+    {
+      path: 'signin',
+      loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
+    },
+    
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
- 
-  
-  {
-    path: 'profile', component: ProfileComponent 
-  },
-  
   {
     path: '**',
     loadChildren: () => import('./pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   }
+
+
 
 
 
