@@ -23,6 +23,7 @@ import { SwiperModule } from 'swiper/angular';
 
 import {StreamingMedia} from "@ionic-native/streaming-media/ngx"
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+
 @NgModule({
   declarations: [AppComponent, ViewheaderComponent],
 imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, ReactiveFormsModule, 

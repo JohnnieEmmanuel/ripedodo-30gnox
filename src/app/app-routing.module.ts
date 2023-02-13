@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import {ViewheaderComponent} from './viewheader/viewheader.component';
+import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {
     path: '',
@@ -66,10 +67,23 @@ const routes: Routes = [
     loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
 
   },
+ 
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+ 
+  
+  {
+    path: 'profile', component: ProfileComponent 
+  },
+  
   {
     path: '**',
     loadChildren: () => import('./pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   }
+
+
 
 
  
