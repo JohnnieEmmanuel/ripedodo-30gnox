@@ -1,47 +1,34 @@
-<ion-header collapse="fade" [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center" color="primary">
-      RIPEDODO
-    </ion-title>
-    
+    <ion-title>Account</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-<div class="cs cs-text">
-  <strong><h1>Coming Soon</h1></strong>
-</div>
-<!--grids-sec1-->
-<section class="w3l-grids">
-  <div class="grids-main py-5">
-    <div class="container py-lg-3">
-    
-      <div class="w3l-populohny-grids">
-        <div class="item vhny-grid" *ngFor="let movie of Movies">
-          <div class="box16">
-              <figure >
-                <img class="img-fluid img" [src]="movie.movieposter" alt="">
-              </figure>
-              <div class="box-content">
-                <h3 class="title">{{movie.movietitle}}</h3>
-                <h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [value]="session?.user?.email"></ion-input>
+    </ion-item>
 
-                  </span>
+   
 
-                  <span class="post fa fa-heart text-right"></span>
-                </h4>
-              </div>
-              <span class="fa fa-play video-icon" aria-hidden="true"></span>
-          
-          </div>
-        </div>
-        
-      </div>
+    <ion-item>
+      <ion-label position="stacked">Full name</ion-label>
+      <ion-input
+        type="url"
+        name="first_name"
+        [(ngModel)]="profile.fullname"
+      ></ion-input>
+    </ion-item>
+    <div class="ion-text-center">
+      <ion-button fill="clear" (click)="updateProfile()"
+        >Update Profile</ion-button
+      >
     </div>
+  </form>
+
+  <div class="ion-text-center">
+    <ion-button fill="clear" (click)="signOut()">Log Out</ion-button>
   </div>
-</section>
-<!--//grids-sec1-->
-
-
 </ion-content>
-

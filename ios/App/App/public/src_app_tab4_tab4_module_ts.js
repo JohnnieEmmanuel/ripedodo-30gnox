@@ -90,41 +90,101 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Tab4Page": () => (/* binding */ Tab4Page)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _tab4_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tab4.page.html?ngResource */ 7520);
-/* harmony import */ var _tab4_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab4.page.scss?ngResource */ 6746);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _services_moviecrud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/moviecrud.service */ 437);
+/* harmony import */ var C_Users_hp_RED_JOHN_DEV_ripedodo_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _tab4_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab4.page.html?ngResource */ 7520);
+/* harmony import */ var _tab4_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab4.page.scss?ngResource */ 6746);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _services_supabase_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! .././services/supabase.service */ 1829);
+
+
 
 
 
 
 
 let Tab4Page = class Tab4Page {
-    constructor(movieCrudService) {
-        this.movieCrudService = movieCrudService;
-        this.Movies = [];
-    }
-    ionViewDidEnter() {
-        this.movieCrudService.getComingsoon().subscribe((response) => {
-            this.Movies = response;
-            let da = this.Movies.movietitle;
-            console.log(this.Movies);
-            this.daks = this.Movies.map(dak => dak);
-        });
-    }
-};
-Tab4Page.ctorParameters = () => [
-    { type: _services_moviecrud_service__WEBPACK_IMPORTED_MODULE_2__.MoviecrudService }
-];
-Tab4Page = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
-        selector: 'app-tab4',
-        template: _tab4_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
-        styles: [_tab4_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
-    })
-], Tab4Page);
+  constructor(supabase, router) {
+    this.supabase = supabase;
+    this.router = router;
+    this.profile = {
+      fullname: ''
+    };
+    this.session = this.supabase.session;
+  }
 
+  ionViewDidEnter() {
+    this.getProfile();
+  }
+
+  getProfile() {
+    var _this = this;
+
+    return (0,C_Users_hp_RED_JOHN_DEV_ripedodo_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      try {
+        let {
+          data: profile,
+          error,
+          status
+        } = yield _this.supabase.profile;
+
+        if (error && status !== 406) {// throw error
+        }
+
+        if (profile) {
+          _this.profile = profile;
+        }
+      } catch (error) {
+        alert(error.message);
+      }
+    })();
+  }
+
+  updateProfile(avatar_url = '') {
+    var _this2 = this;
+
+    return (0,C_Users_hp_RED_JOHN_DEV_ripedodo_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const loader = yield _this2.supabase.createLoader();
+      yield loader.present();
+
+      try {
+        yield _this2.supabase.updateProfile({ ..._this2.profile
+        });
+        yield loader.dismiss();
+        yield _this2.supabase.createNotice('Profile updated!');
+      } catch (error) {
+        yield _this2.supabase.createNotice(error.message);
+      }
+    })();
+  }
+
+  signOut() {
+    var _this3 = this;
+
+    return (0,C_Users_hp_RED_JOHN_DEV_ripedodo_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log('testing?');
+      yield _this3.supabase.signOut();
+
+      _this3.router.navigate(['/signin'], {
+        replaceUrl: true
+      });
+    })();
+  }
+
+};
+
+Tab4Page.ctorParameters = () => [{
+  type: _services_supabase_service__WEBPACK_IMPORTED_MODULE_3__.SupabaseService
+}, {
+  type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router
+}];
+
+Tab4Page = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+  selector: 'app-tab4',
+  template: _tab4_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__,
+  styles: [_tab4_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__]
+})], Tab4Page);
 
 
 /***/ }),
@@ -145,7 +205,7 @@ module.exports = ".cs {\n  margin-left: 20px;\n  display: block;\n}\n\n.cs-text 
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header collapse=\"fade\" [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title class=\"ion-text-center\" color=\"primary\">\r\n      RIPEDODO\r\n    </ion-title>\r\n    \r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n<div class=\"cs cs-text\">\r\n  <strong><h1>Coming Soon</h1></strong>\r\n</div>\r\n<!--grids-sec1-->\r\n<section class=\"w3l-grids\">\r\n  <div class=\"grids-main py-5\">\r\n    <div class=\"container py-lg-3\">\r\n    \r\n      <div class=\"w3l-populohny-grids\">\r\n        <div class=\"item vhny-grid\" *ngFor=\"let movie of Movies\">\r\n          <div class=\"box16\">\r\n              <figure >\r\n                <img class=\"img-fluid img\" [src]=\"movie.movieposter\" alt=\"\">\r\n              </figure>\r\n              <div class=\"box-content\">\r\n                <h3 class=\"title\">{{movie.movietitle}}</h3>\r\n                <h4> <span class=\"post\"><span class=\"fa fa-clock-o\"> </span> 1 Hr 4min\r\n\r\n                  </span>\r\n\r\n                  <span class=\"post fa fa-heart text-right\"></span>\r\n                </h4>\r\n              </div>\r\n              <span class=\"fa fa-play video-icon\" aria-hidden=\"true\"></span>\r\n          \r\n          </div>\r\n        </div>\r\n        \r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n<!--//grids-sec1-->\r\n\r\n\r\n</ion-content>\r\n\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Account</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <form>\r\n    <ion-item>\r\n      <ion-label position=\"stacked\">Email</ion-label>\r\n      <ion-input type=\"email\" [value]=\"session?.user?.email\"></ion-input>\r\n    </ion-item>\r\n\r\n   \r\n\r\n    <ion-item>\r\n      <ion-label position=\"stacked\">Full name</ion-label>\r\n      <ion-input\r\n        type=\"url\"\r\n        name=\"first_name\"\r\n        [(ngModel)]=\"profile.fullname\"\r\n      ></ion-input>\r\n    </ion-item>\r\n    <div class=\"ion-text-center\">\r\n      <ion-button fill=\"clear\" (click)=\"updateProfile()\"\r\n        >Update Profile</ion-button\r\n      >\r\n    </div>\r\n  </form>\r\n\r\n  <div class=\"ion-text-center\">\r\n    <ion-button fill=\"clear\" (click)=\"signOut()\">Log Out</ion-button>\r\n  </div>\r\n</ion-content>";
 
 /***/ })
 

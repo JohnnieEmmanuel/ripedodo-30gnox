@@ -15,8 +15,11 @@ export class AppComponent implements OnInit {
     this.supabase.authChanges((_, session) => {
       console.log(session)
       if (session?.user) {
-        console.log(session.user)
-      //  this.router.navigate(['/home'])
+        // console.log(session.user)
+      // this.router.navigate(['/'])
+      }
+      else{
+        this.router.navigate(['/signin'])
       }
       
     });

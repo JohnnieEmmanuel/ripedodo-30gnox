@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 
 import { MoviecrudService } from '../services/moviecrud.service';
+import { Profile, SupabaseService } from '.././services/supabase.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-tab1',
@@ -9,6 +11,12 @@ import { MoviecrudService } from '../services/moviecrud.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+
+  profile: Profile = {
+    fullname: '',
+  
+
+  }
   @ViewChild('slidesRef', { static: true }) 
   slidesRef: IonSlides;
 
@@ -36,9 +44,24 @@ public async slideDidChange() {
     isEnd: await this.slidesRef.isEnd()
   });
 }
-  constructor(private movieCrudService: MoviecrudService) {}
+
+session = this.supabase.session
+
+  constructor(private movieCrudService: MoviecrudService,
+    private readonly supabase: SupabaseService,
+    private router: Router) {}
+
+ 
 
   ionViewDidEnter() {
+    if(this.session){
+      this.getProfile()
+      }
+      else{
+      this.router.navigate(['/signin'], { replaceUrl: true })
+  
+      }
+
     this.movieCrudService.getMovies().subscribe((response) => {
       this.Movies = response;
       console.log(this.Movies);
@@ -49,17 +72,26 @@ public async slideDidChange() {
     this.MoviesOnly  = this.Movies.filter(movie => movie.movietype === 'movie') //filter movies only
 
     })
-    
-
- 
-
-
- 
-
-  
 
   }
   
+  async getProfile() {
+    try {
+      let { data: profile, error, status } = await this.supabase.profile
+      if (error && status == 406) {
+        console.log("new user -- redirecting to verification page")
+        this.router.navigate(['/verification'], { replaceUrl: true })
+
+      }
+    
+      if (profile) {
+        this.profile = profile
+        
+      }
+    } catch (error) {
+      alert(error.message)
+    }
+  }
   
   
   

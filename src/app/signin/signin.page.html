@@ -1,71 +1,61 @@
 
-  <body class="app app-login p-0">    	
-    <div class="row g-0 app-auth-wrapper">
-	    <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
-		    <div class="d-flex flex-column align-content-end">
-			    <div class="app-auth-body mx-auto">	
-				    <div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
-					<h2 class="auth-heading text-center mb-5">Log in to Portal</h2>
-			        <div class="auth-form-container text-start">
-						<form class="auth-form login-form" (ngSubmit)="handleLogin($event)">         
-							<div class="email mb-3">
-								<label class="sr-only" for="signin-email">Email</label>
-								<input id="signin-email"  [(ngModel)]="email" name="email" type="email" class="form-control signin-email" placeholder="Email address" required="required">
-							</div><!--//form-group-->
-							<div class="password mb-3">
-								<label class="sr-only" for="signin-password">Password</label>
-								<input id="signin-password" [(ngModel)]="password" name="password" type="password" class="form-control signin-password" placeholder="Password" required="required">
-								<div class="extra mt-3 row justify-content-between">
-									<div class="col-6">
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="RememberPassword">
-											<label class="form-check-label" for="RememberPassword">
-											Remember me
-											</label>
-										</div>
-									</div><!--//col-6-->
-									<div class="col-6">
-										<div class="forgot-password text-end">
-											<a href="reset-password.html">Forgot password?</a>
-										</div>
-									</div><!--//col-6-->
-								</div><!--//extra-->
-							</div><!--//form-group-->
-							<div class="text-center">
-								<button type="submit" class="btn btn-success w-100 theme-btn mx-auto">Log In</button>
-							</div>
-						</form>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<form class="login100-form validate-form flex-sb flex-w"  (ngSubmit)="handleLogin($event)">
+					<span class="login100-form-title p-b-30">
+						<img class="info_img" width="100px" height="100px" src="assets/icon/icon.png"   alt="">
 						
-						<div class="auth-option text-center pt-5">No Account? Sign up <a class="text-link" [routerLink]="['/signup']" routerDirection="forward">here</a>.</div>
-					</div><!--//auth-form-container-->	
+					</span>
 
-			    </div><!--//auth-body-->
-		    
-			    <footer class="app-auth-footer">
-					<div class="container text-center py-3">
-						<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-				   <small class="copyright">Powered by <span class="sr-only"></span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a>CodeViper : Thevexcompany</a> </small>
-					  
-				   </div>
-			    </footer><!--//app-auth-footer-->	
-		    </div><!--//flex-column-->   
-	    </div><!--//auth-main-col-->
-	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
-		    <div class="auth-background-holder">
-		    </div>
-		    <div class="auth-background-mask"></div>
-		    <div class="auth-background-overlay p-3 p-lg-5">
-			    <div class="d-flex flex-column align-content-end h-100">
-				    <div class="h-100"></div>
-				    <div class="overlay-content p-3 p-lg-4 rounded">
-					    <h5 class="mb-3 overlay-title">Explore Portal Admin Template</h5>
-					    <div>Portal is a free Bootstrap 5 admin dashboard template. You can download and view the template license <a href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/">here</a>.</div>
-				    </div>
-				</div>
-		    </div><!--//auth-background-overlay-->
-	    </div><!--//auth-background-col-->
-    
-    </div><!--//row-->
+					
+					
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">
+							Email
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100" id="signin-email"  [(ngModel)]="email" name="email" type="email">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="p-t-13 p-b-9">
+						<span class="txt1">
+							Password
+						</span>
 
+					
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" id="signin-password" [(ngModel)]="password" name="password" type="password" >
+						<span class="focus-input100"></span>
+					</div>
+					<a href="#" class="txt2 bo1 m-l-5">
+						Forgotten Password?
+					</a>
 
-</body>
+					<div class="container-login100-form-btn m-t-17">
+						<button type="submit" class="login100-form-btn btn-signin">
+							Sign In
+						</button>
+					</div>
+
+					<div class="w-full text-center p-t-55">
+						<span class="txt2">
+							Don't have an account?
+						</span>
+
+						<a  [routerLink]="['/signup']" routerDirection="forward" class="txt2 bo1"> 
+							Sign up now
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	

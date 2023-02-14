@@ -21,7 +21,7 @@ const routes: Routes = [
       },
       
       {
-        path: 'comingsoon',
+        path: 'profile',
         loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
       },
       {

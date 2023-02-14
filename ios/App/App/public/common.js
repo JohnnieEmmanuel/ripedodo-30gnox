@@ -102,12 +102,8 @@ class Movie {
 let MoviecrudService = class MoviecrudService {
     constructor(httpClient) {
         this.httpClient = httpClient;
-        // url = 'http://localhost:5000';
-        // endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
-        // url='https://ripedodo-backend.herokuapp.com'
-        // endpoint = this.url+'/v1/upload/uploadmoviedetails';
-        this.url = 'https://ripedodo-backend.vercel.app';
-        this.endpoint = this.url + '/v1/upload/uploadmoviedetails';
+        this.url = 'http://localhost:5000';
+        this.endpoint = 'http://localhost:5000/v1/upload/uploadmoviedetails';
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({ 'Content-Type': 'application/json' })
         };
@@ -248,9 +244,9 @@ let MovieuploadService = class MovieuploadService {
     constructor(httpClient) {
         this.httpClient = httpClient;
         //calling the api handling the upload for movie details
-        // endpoint = 'http://localhost:5000/v1/uploaddetails';
+        this.endpoint = 'http://localhost:5000/v1/uploaddetails';
         // endpoint = 'https://ripedodo-backend.herokuapp.com/v1/uploaddetails';
-        this.endpoint = 'https://ripedodo-backend.vercel.app/v1/uploaddetails';
+        // endpoint = 'https://ripedodo-backend.vercel.app/v1/uploaddetails';
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({ 'Content-Type': 'application/json' })
         };
@@ -312,12 +308,8 @@ class Watchlater {
 let WatchlaterService = class WatchlaterService {
     constructor(httpClient) {
         this.httpClient = httpClient;
-        // url = 'http://localhost:5000';
-        // endpoint = 'http://localhost:5000/v1/list';
-        // url='https://ripedodo-backend.herokuapp.com'
-        // endpoint = this.url+'/v1/list';
-        this.url = 'https://ripedodo-backend.vercel.app';
-        this.endpoint = this.url + '/v1/list';
+        this.url = 'http://localhost:5000';
+        this.endpoint = 'http://localhost:5000/v1/list';
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({ 'Content-Type': 'application/json' })
         };

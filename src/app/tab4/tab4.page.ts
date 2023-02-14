@@ -1,33 +1,57 @@
 import { Component } from '@angular/core';
-import {MoviecrudService} from '../services/moviecrud.service'
+import { Router } from '@angular/router'
+import { Profile, SupabaseService } from '.././services/supabase.service'
 @Component({
   selector: 'app-tab4',
   templateUrl: './tab4.page.html',
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page  {
-  Movies: any = [];
-daks:any
 
-  constructor(private movieCrudService: MoviecrudService) {}
- 
+  profile: Profile = {
+   fullname:''
+
+  }
+
+  session = this.supabase.session
+
+  constructor(
+    private readonly supabase: SupabaseService,
+    private router: Router
+  ) {}
   ionViewDidEnter() {
-    this.movieCrudService.getComingsoon().subscribe((response) => {
-      this.Movies = response;
-      let da = this.Movies.movietitle;
-    
-      console.log(this.Movies);
-      this.daks = this.Movies.map(dak => dak)
+    this.getProfile()
 
+  }
+  async getProfile() {
+    try {
+      let { data: profile, error, status } = await this.supabase.profile
+      if (error && status !== 406) {
+        // throw error
+      }
+      if (profile) {
+        this.profile = profile
+      }
+    } catch (error) {
+      alert(error.message)
+    }
+  }
 
-    })
+  async updateProfile(avatar_url: string = '') {
+    const loader = await this.supabase.createLoader()
+    await loader.present()
+    try {
+      await this.supabase.updateProfile({ ...this.profile})
+      await loader.dismiss()
+      await this.supabase.createNotice('Profile updated!')
+    } catch (error) {
+      await this.supabase.createNotice(error.message)
+    }
+  }
 
- 
-
-
- 
-
-  
-
+  async signOut() {
+    console.log('testing?')
+    await this.supabase.signOut()
+    this.router.navigate(['/signin'], { replaceUrl: true })
   }
 }

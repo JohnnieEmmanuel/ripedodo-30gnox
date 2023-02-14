@@ -7,8 +7,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-first_name = ''
-last_name = ''
+fullname= ''
   email = ''
   password = ''
  confirm_password = ''

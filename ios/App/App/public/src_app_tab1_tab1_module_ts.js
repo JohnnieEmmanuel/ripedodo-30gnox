@@ -94,11 +94,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Tab1Page": () => (/* binding */ Tab1Page)
 /* harmony export */ });
 /* harmony import */ var C_Users_hp_RED_JOHN_DEV_ripedodo_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4929);
 /* harmony import */ var _tab1_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab1.page.html?ngResource */ 3852);
 /* harmony import */ var _tab1_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab1.page.scss?ngResource */ 6297);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _services_moviecrud_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/moviecrud.service */ 437);
+/* harmony import */ var _services_supabase_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! .././services/supabase.service */ 1829);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 124);
+
+
 
 
 
@@ -106,8 +110,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let Tab1Page = class Tab1Page {
-  constructor(movieCrudService) {
+  constructor(movieCrudService, supabase, router) {
     this.movieCrudService = movieCrudService;
+    this.supabase = supabase;
+    this.router = router;
+    this.profile = {
+      fullname: ''
+    };
     this.Movies = [];
     this.Tvshows = [];
     this.MoviesOnly = [];
@@ -118,6 +127,7 @@ let Tab1Page = class Tab1Page {
         delay: 7000
       }
     };
+    this.session = this.supabase.session;
   }
 
   slideWillChange() {
@@ -138,6 +148,14 @@ let Tab1Page = class Tab1Page {
   }
 
   ionViewDidEnter() {
+    if (this.session) {
+      this.getProfile();
+    } else {
+      this.router.navigate(['/signin'], {
+        replaceUrl: true
+      });
+    }
+
     this.movieCrudService.getMovies().subscribe(response => {
       this.Movies = response;
       console.log(this.Movies); // filterSeriesOnly(this.Movies);
@@ -148,21 +166,53 @@ let Tab1Page = class Tab1Page {
     });
   }
 
+  getProfile() {
+    var _this2 = this;
+
+    return (0,C_Users_hp_RED_JOHN_DEV_ripedodo_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      try {
+        let {
+          data: profile,
+          error,
+          status
+        } = yield _this2.supabase.profile;
+
+        if (error && status == 406) {
+          console.log("new user -- redirecting to verification page");
+
+          _this2.router.navigate(['/verification'], {
+            replaceUrl: true
+          });
+        }
+
+        if (profile) {
+          _this2.profile = profile;
+        }
+      } catch (error) {
+        alert(error.message);
+      }
+    })();
+  }
+
 };
 
 Tab1Page.ctorParameters = () => [{
   type: _services_moviecrud_service__WEBPACK_IMPORTED_MODULE_3__.MoviecrudService
+}, {
+  type: _services_supabase_service__WEBPACK_IMPORTED_MODULE_4__.SupabaseService
+}, {
+  type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router
 }];
 
 Tab1Page.propDecorators = {
   slidesRef: [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.ViewChild,
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild,
     args: ['slidesRef', {
       static: true
     }]
   }]
 };
-Tab1Page = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+Tab1Page = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
   selector: 'app-tab1',
   template: _tab1_page_html_ngResource__WEBPACK_IMPORTED_MODULE_1__,
   styles: [_tab1_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__]
@@ -187,7 +237,7 @@ module.exports = ".scrolling-wrapper {\n  overflow-x: auto;\n}\n\nh1 {\n  font-w
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "\n<ion-content [fullscreen]=\"true\">\n\t\n\t<ion-grid>\n\t\t\n\t\t<ion-row>\n\t\t  \n\t\t  <ion-col>\n\t\t\t<div class=\"ion-text-center \">\n\t\t\t\t<ion-slides\n  [pager]=\"true\"\n  [scrollbar]=\"true\"\n  [options]=\"options\"\n\n  (ionSlideWillChange)=\"slideWillChange()\"\n  (ionSlideDidChange)=\"slideDidChange()\"\n\n  #slidesRef\n>\n\n\t<ion-slide *ngFor=\"let movie of Movies\">\n\t\t<figure>\n\t\t\t<img class=\"img-fig\"  [src]=\"movie.movieposter\" *ngIf=\"movie.movieposter != 'N/A'\"alt=\"\" >\n\t\t  </figure>\t\n\t</ion-slide>\n\n  \n  \n</ion-slides>\n\t\t\t</div>\n\t\t  </ion-col>\n\t\t</ion-row>\n\t\t\n\t  </ion-grid>\n\n\t<ion-grid>\n\t\t<ion-row>\n\t\t  \n\t\t  <ion-col>\n\t\t\t<div class=\"ion-text-center \">\n\t\t\t\t<ion-text color=\"primary\">\n\t\t\t\t\t<h4 style=\"font-weight: bold;\">MOVIES</h4>\n\t\t\t\t  </ion-text>\n\t\t\t</div>\n\t\t  </ion-col>\n\t\t</ion-row>\n\t\t<ion-row class=\"ion-align-items-center scrolling-wrapper flex-row flex-nowrap\">\n\t\t\t<ion-col size=\"4\"  class=\"fig-col\" *ngFor=\"let movie of MoviesOnly\" [routerLink]=\"['/', 'movie', movie._id]\">\n\t\t\t  <figure>\n\t\t\t\t<img class=\"img-fig\"  [src]=\"movie.movieposter\" *ngIf=\"movie.movieposter != 'N/A'\"alt=\"\" loading=\"lazy\">\n\t\t\t\t<!-- <figcaption class=\"img-figcaption\">{{genre.movietitle}}</figcaption> -->\n\t\t\t  </figure>\n\t\t\t  <p></p>\n\t\t\t</ion-col>\n\t\t\t\n\t\t  </ion-row>\n\t  </ion-grid>\n  \n\t<ion-grid>\n\t\t<ion-row>\n\t\t  \n\t\t  <ion-col>\n\t\t\t<div class=\"ion-text-center \">\n\t\t\t\t<ion-text color=\"primary\">\n\t\t\t\t\t<h4 style=\"font-weight: bold;\">TV SHOWS</h4>\n\t\t\t\t  </ion-text>\n\t\t\t</div>\n\t\t  </ion-col>\n\t\t</ion-row>\n\t\t<ion-row class=\"ion-align-items-center scrolling-wrapper flex-row flex-nowrap\">\n\t\t\t<ion-col size=\"4\"  class=\"fig-col\" *ngFor=\"let tvshow of Tvshows\" [routerLink]=\"['/', 'movie', tvshow._id]\">\n\t\t\t  <figure>\n\t\t\t\t<img class=\"img-fig\"  [src]=\"tvshow.movieposter\" *ngIf=\"tvshow.movieposter != 'N/A'\"alt=\"\" loading=\"lazy\">\n\t\t\t\t<!-- <figcaption class=\"img-figcaption\">{{genre.movietitle}}</figcaption> -->\n\t\t\t  </figure>\n\t\t\t  <p></p>\n\t\t\t</ion-col>\n\t\t\t\n\t\t  </ion-row>\n\t  </ion-grid>\n</ion-content>";
+module.exports = "<ion-header [translucent]=\"true\">\n\t<ion-toolbar>\n\t  <ion-title class=\"ion-text-center\" color=\"primary\">\n\t\tRIPEDODO\n\t  </ion-title>\n\t</ion-toolbar>\n  </ion-header>\n  \n  \n<ion-content [fullscreen]=\"true\">\n\n\t\t<ion-row>\n\t\t  \n\t\t  <ion-col>\n\t\t\t<div class=\"ion-text-center \">\n\t\t\t\t<ion-slides\n  [pager]=\"true\"\n  [scrollbar]=\"true\"\n  [options]=\"options\"\n\n  (ionSlideWillChange)=\"slideWillChange()\"\n  (ionSlideDidChange)=\"slideDidChange()\"\n\n  #slidesRef\n>\n\n\t<ion-slide *ngFor=\"let movie of Movies\">\n\t\t<figure>\n\t\t\t<img class=\"img-fig\"  [src]=\"movie.movieposter\" *ngIf=\"movie.movieposter != 'N/A'\"alt=\"\" >\n\t\t  </figure>\t\n\t</ion-slide>\n\n  \n  \n</ion-slides>\n\t\t\t</div>\n\t\t  </ion-col>\n\t\t</ion-row>\n\t\t\n\t \n\n\t<ion-grid>\n\t\t<ion-row>\n\t\t  \n\t\t  <ion-col>\n\t\t\t<div class=\"ion-text-center \">\n\t\t\t\t<ion-text color=\"primary\">\n\t\t\t\t\t<h4 style=\"font-weight: bold;\">MOVIES</h4>\n\t\t\t\t  </ion-text>\n\t\t\t</div>\n\t\t  </ion-col>\n\t\t</ion-row>\n\t\t<ion-row class=\"ion-align-items-center scrolling-wrapper flex-row flex-nowrap\">\n\t\t\t<ion-col size=\"4\"  class=\"fig-col\" *ngFor=\"let movie of MoviesOnly\" [routerLink]=\"['/', 'movie', movie._id]\">\n\t\t\t  <figure>\n\t\t\t\t<img class=\"img-fig\"  [src]=\"movie.movieposter\" *ngIf=\"movie.movieposter != 'N/A'\"alt=\"\" loading=\"lazy\">\n\t\t\t\t<!-- <figcaption class=\"img-figcaption\">{{genre.movietitle}}</figcaption> -->\n\t\t\t  </figure>\n\t\t\t  <p></p>\n\t\t\t</ion-col>\n\t\t\t\n\t\t  </ion-row>\n\t  </ion-grid>\n  \n\t<ion-grid>\n\t\t<ion-row>\n\t\t  \n\t\t  <ion-col>\n\t\t\t<div class=\"ion-text-center \">\n\t\t\t\t<ion-text color=\"primary\">\n\t\t\t\t\t<h4 style=\"font-weight: bold;\">TV SHOWS</h4>\n\t\t\t\t  </ion-text>\n\t\t\t</div>\n\t\t  </ion-col>\n\t\t</ion-row>\n\t\t<ion-row class=\"ion-align-items-center scrolling-wrapper flex-row flex-nowrap\">\n\t\t\t<ion-col size=\"4\"  class=\"fig-col\" *ngFor=\"let tvshow of Tvshows\" [routerLink]=\"['/', 'movie', tvshow._id]\">\n\t\t\t  <figure>\n\t\t\t\t<img class=\"img-fig\"  [src]=\"tvshow.movieposter\" *ngIf=\"tvshow.movieposter != 'N/A'\"alt=\"\" loading=\"lazy\">\n\t\t\t\t<!-- <figcaption class=\"img-figcaption\">{{genre.movietitle}}</figcaption> -->\n\t\t\t  </figure>\n\t\t\t  <p></p>\n\t\t\t</ion-col>\n\t\t\t\n\t\t  </ion-row>\n\t  </ion-grid>\n</ion-content>";
 
 /***/ })
 

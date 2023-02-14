@@ -11,13 +11,9 @@ import {Router} from '@angular/router'
 
 export interface Profile {
   
-  usertag: string
-  first_name: string
-  last_name: string
-  dob: string
-  avatar_url: string
-  phone_number: string
-  wallet_balance: string
+
+  fullname: string
+  
 
  
   
@@ -62,21 +58,12 @@ export class SupabaseService {
  get profile() {
     return this.supabase
       .from('profiles')
-      .select(`usertag, first_name, last_name, avatar_url, dob, phone_number,wallet_balance`)
+      .select(`fullname`)
       .eq('id', this.user?.id)
       .single()
   }
 
-  get userTags(){
-   
-      return this.supabase
-      .from('profiles')
-      .select('usertag')
-
-  }
-  
-  
-
+ 
  
   
   signIn(email: string, password:string) {

@@ -37,8 +37,8 @@ const routes = [
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_tab3_tab3_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab3/tab3.module */ 3746)).then(m => m.Tab3PageModule)
             },
             {
-                path: 'comingsoon',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_tab4_tab4_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab4/tab4.module */ 2486)).then(m => m.Tab4PageModule)
+                path: 'profile',
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_tab4_tab4_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../tab4/tab4.module */ 2486)).then(m => m.Tab4PageModule)
             },
             {
                 path: '',
@@ -157,7 +157,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"home\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n  \r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"search\">\r\n      <ion-icon name=\"search\"></ion-icon>\r\n      \r\n    </ion-tab-button>\r\n\r\n    <!-- <ion-tab-button tab=\"watchlater\">\r\n      <ion-icon name=\"hourglass\"></ion-icon> -->\r\n      <!-- <ion-label>Comingsoon</ion-label> -->\r\n    <!-- </ion-tab-button> -->\r\n    <ion-tab-button tab=\"comingsoon\">\r\n      <!-- <ion-icon name=\"person-circle-outline\"></ion-icon> -->\r\n      <ion-icon name=\"hourglass\"></ion-icon>\r\n  \r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n";
+module.exports = "<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"home\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n  \r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"search\">\r\n      <ion-icon name=\"search\"></ion-icon>\r\n      \r\n    </ion-tab-button>\r\n\r\n    <!-- <ion-tab-button tab=\"watchlater\">\r\n      <ion-icon name=\"hourglass\"></ion-icon> -->\r\n      <!-- <ion-label>Comingsoon</ion-label> -->\r\n    <!-- </ion-tab-button> -->\r\n\r\n    <ion-tab-button tab=\"watchlater\">\r\n      <!-- <ion-icon name=\"person-circle-outline\"></ion-icon> -->\r\n      <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n  \r\n    </ion-tab-button>\r\n    <ion-tab-button tab=\"profile\">\r\n      <ion-icon name=\"person-circle-outline\"></ion-icon>\r\n  \r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n";
 
 /***/ })
 
