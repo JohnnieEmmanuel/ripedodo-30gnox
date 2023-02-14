@@ -9,10 +9,8 @@
   
 <ion-content [fullscreen]="true">
 
-		<ion-row>
-		  
-		  <ion-col>
-			<div class="ion-text-center ">
+
+			<div class="ion-text-center " >
 				<ion-slides
   [pager]="true"
   [scrollbar]="true"
@@ -22,11 +20,12 @@
   (ionSlideDidChange)="slideDidChange()"
 
   #slidesRef
->
+  style="height: 250px; width: 100%; "
+  >
 
-	<ion-slide *ngFor="let movie of Movies">
-		<figure>
-			<img class="img-fig"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" >
+	<ion-slide  style="border-radius: 20px;" *ngFor="let movie of Movies" >
+		<figure  style="border-radius: 20px;" >
+			<img class="img-fig" height="250px;"  style="border-radius: 20px;"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" >
 		  </figure>	
 	</ion-slide>
 
@@ -34,8 +33,7 @@
   
 </ion-slides>
 			</div>
-		  </ion-col>
-		</ion-row>
+
 		
 	 
 
