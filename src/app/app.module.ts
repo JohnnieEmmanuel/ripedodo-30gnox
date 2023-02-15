@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { PreloadingStrategy, RouteReuseStrategy } from '@angular/router';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SwiperModule } from 'swiper/angular';
 
 import {StreamingMedia} from "@ionic-native/streaming-media/ngx"
+
+import { CustomPreloadingStrategy } from './custom-preloading-strategy';
+
 @NgModule({
   declarations: [AppComponent, ViewheaderComponent],
 imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, ReactiveFormsModule, 
@@ -29,7 +32,7 @@ imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule, 
 
 
 ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },StreamingMedia],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, { provide: PreloadingStrategy, useClass: CustomPreloadingStrategy },StreamingMedia],
   bootstrap: [AppComponent],
   
 })
