@@ -54,13 +54,13 @@ session = this.supabase.session
  
 
   ionViewDidEnter() {
-    if(this.session){
-      this.getProfile()
-      }
-      else{
-      this.router.navigate(['/signin'], { replaceUrl: true })
+    // if(this.session){
+    //   this.getProfile()
+    //   }
+    //   else{
+    //   this.router.navigate(['/signin'], { replaceUrl: true })
   
-      }
+    //   }
 
     this.movieCrudService.getMovies().subscribe((response) => {
       this.Movies = response;
@@ -75,23 +75,23 @@ session = this.supabase.session
 
   }
   
-  async getProfile() {
-    try {
-      let { data: profile, error, status } = await this.supabase.profile
-      if (error && status == 406) {
-        console.log("new user -- redirecting to verification page")
-        this.router.navigate(['/verification'], { replaceUrl: true })
+  // async getProfile() {
+  //   try {
+  //     let { data: profile, error, status } = await this.supabase.profile
+  //     if (error && status == 406) {
+  //       console.log("new user -- redirecting to verification page")
+  //       // this.router.navigate(['/verification'], { replaceUrl: true })
 
-      }
+  //     }
     
-      if (profile) {
-        this.profile = profile
+  //     if (profile) {
+  //       this.profile = profile
         
-      }
-    } catch (error) {
-      alert(error.message)
-    }
-  }
+  //     }
+  //   } catch (error) {
+  //     alert(error.message)
+  //   }
+  // }
   
   
   

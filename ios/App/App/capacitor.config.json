@@ -3,18 +3,5 @@
 	"appName": "ripedodo",
 	"webDir": "www",
 	"bundledWebRuntime": false,
-	"plugins": {
-		"SplashScreen": {
-			"launchShowDuration": 3000,
-			"launchAutoHide": true,
-			"androidSplashResourceName": "splash",
-			"androidScaleType": "CENTER_CROP",
-			"androidSpinnerStyle": "large",
-			"iosSpinnerStyle": "small",
-			"spinnerColor": "#999999",
-			"showSpinner": true,
-			"splashFullScreen": true,
-			"splashImmersive": true
-		}
-	}
+	"plugins": {}
 }

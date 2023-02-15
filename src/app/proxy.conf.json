@@ -1,6 +1,6 @@
 
 {
     "/api/*": {
-        "target": "http://localhost:6000/", "secure": false
+        "target": "https://ripedodo-backend.vercel.app", "secure": false
     }
 }

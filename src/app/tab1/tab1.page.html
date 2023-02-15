@@ -25,7 +25,7 @@
 
 	<ion-slide  style="border-radius: 20px;" *ngFor="let movie of Movies" >
 		<figure  style="border-radius: 20px;" >
-			<img class="img-fig" height="250px;"  style="border-radius: 20px;"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" >
+			<img class="img-fig" height="250px;"  style="border-radius: 20px;"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy" >
 		  </figure>	
 	</ion-slide>
 
@@ -51,7 +51,7 @@
 		<ion-row class="ion-align-items-center scrolling-wrapper flex-row flex-nowrap">
 			<ion-col size="4"  class="fig-col" *ngFor="let movie of MoviesOnly" [routerLink]="['/', 'movie', movie._id]">
 			  <figure>
-				<img class="img-fig"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="lazy">
+				<img class="img-fig"  [src]="movie.movieposter" *ngIf="movie.movieposter != 'N/A'"alt="" loading="eager">
 				<!-- <figcaption class="img-figcaption">{{genre.movietitle}}</figcaption> -->
 			  </figure>
 			  <p></p>

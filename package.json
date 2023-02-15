@@ -30,6 +30,7 @@
     "@capacitor/haptics": "^4.0.1",
     "@capacitor/ios": "4.3.0",
     "@capacitor/keyboard": "^4.0.1",
+    "@capacitor/splash-screen": "^4.1.4",
     "@capacitor/status-bar": "^4.0.1",
     "@capacitor/toast": "^4.0.1",
     "@ionic-native/splash-screen": "^5.36.0",

@@ -29,9 +29,7 @@
 @import "~bootstrap/dist/css/bootstrap.css"; 
 
 // /* You can add global styles to this file, and also import other style files */
-// @import 'tailwindcss/base';
-// @import 'tailwindcss/components';
-// @import 'tailwindcss/utilities';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 // global.scss
-@import '~swiper/scss';
-@import '~@ionic/angular/css/ionic-swiper';
